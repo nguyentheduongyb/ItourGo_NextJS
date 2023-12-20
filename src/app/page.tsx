@@ -8,7 +8,7 @@ import API from '~/API';
 const Home = () => {
   const [data, setData] = useState<any[]>([])
   useEffect(() => {
-    API.get("/api/tour")
+    API.get("api/tour")
       .then((response) => {
         setData(response.data)
       })

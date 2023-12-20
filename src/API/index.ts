@@ -1,7 +1,7 @@
 import axios from "axios";
 // const token = localStorage.getItem('userToken');
 export default axios.create({
-        baseURL: "http://localhost:8888",
+        baseURL: "https://backend-itourgo.onrender.com/",
         // headers: {
         //         // 'authorization': '',
         // },
