@@ -13,7 +13,7 @@ export async function generateMetadata(
         // read route params
         const slug = params.slug
         // fetch data
-        const data = await fetch(`http://localhost:8888/api/tour/${slug}`).then((res) => res.json())
+        const data = await fetch(`https://backend-itourgo.onrender.com/api/tour/${slug}`).then((res) => res.json())
         // optionally access and extend (rather than replace) parent metadata
         const previousImages = (await parent).openGraph?.images || []
         return (
@@ -30,7 +30,7 @@ export async function generateMetadata(
 }
 
 export default async function Page({ params }: Props) {
-        const data = await fetch(`http://localhost:8888/api/tour/${params.slug}`).then((res) => res.json())
+        const data = await fetch(`https://backend-itourgo.onrender.com/api/tour/${params.slug}`).then((res) => res.json())
         return (
                 <div className='container'>
                         <TourDetail data={data} />
