@@ -1,7 +1,7 @@
 'use client'
 import { MdLocationOn } from 'react-icons/md'
 import { useState } from 'react';
-const Search = () => {
+const SearchMain = () => {
         const [searchInput, setSearchInput] = useState('')
 
         const handleSearch = (e: any) => {
@@ -30,4 +30,4 @@ const Search = () => {
         )
 
 }
-export default Search;
+export default SearchMain;

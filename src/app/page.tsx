@@ -1,10 +1,21 @@
 'use client'
 import Link from 'next/link';
-
-
+import { useEffect, useState } from 'react';
 import { FaStar } from "react-icons/fa"
-import { useState } from 'react';
+import API from '~/API';
+
+
 const Home = () => {
+  const [data, setData] = useState<any[]>([])
+  useEffect(() => {
+    API.get("/api/tour")
+      .then((response) => {
+        setData(response.data)
+      })
+      .catch((error) => {
+        throw new Error(error)
+      })
+  }, [])
   return (
     <div>
       <section className='my-8'>
@@ -56,6 +67,27 @@ const Home = () => {
                 </Link>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className='my-8'>
+        <div className="container">
+          <h1 className="text-2xl font-medium mb-6 capitalize">Tour bạn đã xem gần đây</h1>
+          <div className='grid grid-cols-3 gap-6'>
+            {data.map((item, index): any => (
+              <Link key={index} href={`/tour/${item.slug}`} className='flex bg-white hover:bg-blue-100 rounded overflow-hidden'>
+                <div className='h-28 w-28 bg-no-repeat bg-center bg-cover' style={{ backgroundImage: 'url("https://cdn2.ivivu.com/2023/07/14/15/ivivu-cong-vien-naritasan-120x120.jpg")' }}></div>
+                <div className='flex-1 flex flex-col justify-between p-2'>
+                  <div className='space-y-2'>
+                    <h6 className='text-blue-900 line-clamp-1'>{item.name}</h6>
+                    <span className='line-clamp-2'>{item.description}</span>
+                  </div>
+                  <p className='text-right text-[color:var(--primary-color)] font-medium text-lg'>{item.expectedCost}$</p>
+                </div>
+              </Link>
+            )
+            )}
+
           </div>
         </div>
       </section>
