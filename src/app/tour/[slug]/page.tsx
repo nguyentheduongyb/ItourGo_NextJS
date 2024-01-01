@@ -1,5 +1,4 @@
 import { Metadata, ResolvingMetadata } from 'next'
-import API from '~/API'
 import TourDetail from '~/components/tour/TourDetail'
 
 type Props = {

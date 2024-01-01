@@ -42,14 +42,14 @@ const About = () => {
                         <div className="">
                                 <div className={`${tab == "1" ? "block" : "hidden"} py-12`}>
                                         <div className="container">
-                                                <div className='text-center px-40'>
+                                                <div className='text-center px-0 md:px-40'>
                                                         <h3 className="text-2xl font-bold">PNG SOFT</h3>
                                                         <p className="mt-8">Website Planet là trung tâm hàng đầu của thế giới web dành cho các cá nhân và doanh nghiệp đang tìm cách tạo dựng, quảng bá hoặc mở rộng sự hiện diện trực tuyến của họ. Chúng tôi cung cấp các đánh giá có căn cứ, các so sánh chuyên sâu, các hướng dẫn dễ hiểu và các công cụ mạnh mẽ để giúp bạn đạt được tham vọng kỹ thuật số của mình.</p>
                                                         <img className="w-1/2 mx-auto mt-12" src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2023/07/AboutUsMainGlobe.png" alt="" />
                                                 </div>
-                                                <div className='flex my-12 gap-8'>
-                                                        <div className='w-1/5'>
-                                                                <h6 className='text-3xl font-medium border-b border-b-4 border-b-red-500 pb-4'>Câu chuyện của chúng tôi</h6>
+                                                <div className='flex flex-col md:flex-row my-12 gap-8'>
+                                                        <div className='w-full md:w-1/5'>
+                                                                <h6 className='text-3xl font-medium border-b-4 border-b-red-500 pb-4'>Câu chuyện của chúng tôi</h6>
 
                                                         </div>
                                                         <div className='flex-1 flex flex-col gap-4'>
@@ -60,7 +60,7 @@ const About = () => {
                                                 </div>
 
                                                 <div className='bg-[#F7F8FC] pb-12'>
-                                                        <div className='mx-60 text-center flex flex-col items-center gap-6'>
+                                                        <div className='mx-0 md:mx-60 text-center flex flex-col items-center gap-6'>
                                                                 <div className='w-3 h-12 bg-orange-400'></div>
                                                                 <h6 className='text-3xl font-medium'>Chúng tôi ở đâu</h6>
                                                                 <p>Với thiên tư về lĩnh vực kỹ thuật số, chúng tôi thấy không có lý do gì để giới hạn bản thân trong việc tuyển dụng nhân tài chỉ từ một nơi trên thế giới. </p>
@@ -69,9 +69,9 @@ const About = () => {
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div className="w-full border-y-4 border-y-orange-500 grid grid-cols-2">
+                                        <div className="w-full border-y-4 border-y-orange-500 grid grid-cols-1 md:grid-cols-2">
                                                 <div className="bg-white">
-                                                        <div className="py-8 w-2/3 mr-8 ml-auto">
+                                                        <div className="py-8 text-center md:text-start md:w-2/3 md:mr-8 ml-auto">
                                                                 <h6 className="text-2xl font-bold">Sứ mệnh của chúng tôi</h6>
                                                                 <div className='mt-10'>
                                                                         <p className='mb-6'>Chúng tôi thường xuyên đánh giá lại tất cả các sản phẩm mình đã đánh giá để đảm bảo bạn luôn nhận được thông tin cập nhật nhất. Điều này có nghĩa là chúng tôi luôn cập nhật những diễn biến mới nhất về giá cả, tính năng và dịch vụ khách hàng, để bạn biết chính xác nên mong đợi điều gì với số tiền bỏ ra.</p>
@@ -99,7 +99,7 @@ const About = () => {
 
                                         <div className="container py-8">
                                                 <h6 className='text-2xl font-bold text-center'>Đội Ngũ</h6>
-                                                <div className="gap-6 grid grid-cols-5 mt-12">
+                                                <div className="gap-6 grid grid-cols-2 md:grid-cols-5 mt-12">
                                                         <div className="rounded p-4 flex flex-col items-center justify-center gap-3 bg-[#ccc]">
                                                                 <div className="w-16 h-16 rounded-full bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'url("https://www.websiteplanet.com/wp-content/uploads/2023/06/Joshua_Bromley-1-150x150.webp")' }}></div>
                                                                 <p className='font-medium text-sm'>Nguyễn Thế Dương</p>
@@ -133,8 +133,8 @@ const About = () => {
                                                 </div>
                                         </div>
                                         <div className="bg-[#F7F8FC]">
-                                                <div className="container flex gap-8 py-12">
-                                                        <div className="w-3/5">
+                                                <div className="container flex flex-col md:flex-col gap-8 py-12">
+                                                        <div className="w-full md:w-3/5">
                                                                 <h6 className='text-2xl font-bold pb-4 mb-8 border-b-4 border-b-orange-500'>Phòng nghiên cứu</h6>
                                                                 <p>Website Planet làm việc với các cơ quan chuyên về quyền riêng tư dữ liệu và các đội ứng phó khẩn cấp máy tính (CERT) để xác định các mối đe dọa mạng và giúp bảo vệ dữ liệu người dùng của các doanh nghiệp và tổ chức. Chúng tôi đã thành lập đội phân tích an ninh mạng vì lợi ích cộng đồng vào năm 2019 dưới sự lãnh đạo của hai nhà phân tích nổi tiếng thế giới Noah Rotem và Ran Locar. Kể từ đó, chúng tôi đã phát hiện và báo cáo về các mối đe dọa an ninh nghiêm trọng trên khắp thế giới. Với công việc này, chúng tôi đã bảo mật dữ liệu của hơn 100 triệu người.</p>
                                                         </div>
@@ -163,8 +163,8 @@ const About = () => {
                                                         </div>
                                                 </div>
 
-                                                <div className='border-y border-y-2 py-12'>
-                                                        <div className='container flex grid grid-cols-6'>
+                                                <div className='border-y-2 py-12'>
+                                                        <div className='container grid-cols-2 grid md:grid-cols-6'>
                                                                 <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2023/07/Insider-Logo-1.png" alt="" />
                                                                 <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2023/07/Insider-Logo-1.png" alt="" />
                                                                 <img src="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2023/07/Insider-Logo-1.png" alt="" />
@@ -179,7 +179,7 @@ const About = () => {
                                                         <div className='text-center'>
                                                                 <h1 className="text-2xl text-[color:var(--primary-color)] font-bold mb-6 capitalize">Báo cáo mới nhất</h1>
                                                         </div>
-                                                        <div className="flex grid grid-cols-3 gap-8 mt-12">
+                                                        <div className="grid-cols-1 grid md:grid-cols-3 gap-8 mt-12">
                                                                 <div className="overflow-hidden rounded bg-white drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
                                                                         <div className="relative">
                                                                                 <img className="w-full" src="https://i1-dulich.vnecdn.net/2022/05/09/shutterstock-280926449-6744-15-3483-9174-1652070682.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=bGCo6Rv6DseMDE_07TT1Aw" alt="" />
@@ -242,155 +242,43 @@ const About = () => {
                                 </div>
                                 <div className={`${tab == "2" ? "flex" : "hidden"} py-12`}>
                                         <div className="container">
-                                                <div className="flex gap-12">
-                                                        <div className="w-3/5">
+                                                <div className="flex flex-col md:flex-row gap-12">
+                                                        <div className="w-full md:w-3/5">
                                                                 <h2 className="text-3xl font-bold">Các câu hỏi thường gặp</h2>
                                                                 <h3 className='text-2xl mt-3'>Các thắc mắc của bạn có thể được giải quyết ở đây</h3>
                                                                 <p className='text-sm mt-2'>Website Planet là một cổng thông tin nội dung và trung tâm đánh giá dành cho bất kỳ ai đang muốn xây dựng một website mới hoặc cải thiện website sẵn có. Chúng tôi đang tìm cách đơn giản hóa và giảm giá thành xuống trong thế giới dịch vụ website vì lợi ích của cộng đồng chúng ta.</p>
                                                                 <div className='mt-5'>
-                                                                        <h4 className='text-xl font-medium text-red-500'>Tổng quan</h4>
-                                                                        <div className='mt-4'>
-                                                                                <Accordion>
-                                                                                        <Accordion.Panel>
-                                                                                                <Accordion.Title>What is Flowbite?</Accordion.Title>
-                                                                                                <Accordion.Content>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons,
-                                                                                                                dropdowns, modals, navbars, and more.
-                                                                                                        </p>
-                                                                                                        <p className="text-gray-500 dark:text-gray-400">
-                                                                                                                Check out this guide to learn how to&nbsp;
-                                                                                                                <a
-                                                                                                                        href="https://flowbite.com/docs/getting-started/introduction/"
-                                                                                                                        className="text-cyan-600 hover:underline dark:text-cyan-500"
-                                                                                                                >
-                                                                                                                        get started&nbsp;
-                                                                                                                </a>
-                                                                                                                and start developing websites even faster with components on top of Tailwind CSS.
-                                                                                                        </p>
-                                                                                                </Accordion.Content>
-                                                                                        </Accordion.Panel>
-                                                                                        <Accordion.Panel>
-                                                                                                <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-                                                                                                <Accordion.Content>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                Flowbite is first conceptualized and designed using the Figma software so everything you see in the library
-                                                                                                                has a design equivalent in our Figma file.
-                                                                                                        </p>
-                                                                                                        <p className="text-gray-500 dark:text-gray-400">
-                                                                                                                Check out the
-                                                                                                                <a href="https://flowbite.com/figma/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                                                                                                                        Figma design system
-                                                                                                                </a>
-                                                                                                                based on the utility classes from Tailwind CSS and components from Flowbite.
-                                                                                                        </p>
-                                                                                                </Accordion.Content>
-                                                                                        </Accordion.Panel>
-                                                                                        <Accordion.Panel>
-                                                                                                <Accordion.Title>What are the differences between Flowbite and Tailwind UI?</Accordion.Title>
-                                                                                                <Accordion.Content>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                The main difference is that the core components from Flowbite are open source under the MIT license, whereas
-                                                                                                                Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone
-                                                                                                                components, whereas Tailwind UI offers sections of pages.
-                                                                                                        </p>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no
-                                                                                                                technical reason stopping you from using the best of two worlds.
-                                                                                                        </p>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                                                                                                        <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
-                                                                                                                <li>
-                                                                                                                        <a href="https://flowbite.com/pro/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                                                                                                                                Flowbite Pro
-                                                                                                                        </a>
-                                                                                                                </li>
-                                                                                                                <li>
-                                                                                                                        <a
-                                                                                                                                href="https://tailwindui.com/"
-                                                                                                                                rel="nofollow"
-                                                                                                                                className="text-cyan-600 hover:underline dark:text-cyan-500"
-                                                                                                                        >
-                                                                                                                                Tailwind UI
-                                                                                                                        </a>
-                                                                                                                </li>
-                                                                                                        </ul>
-                                                                                                </Accordion.Content>
-                                                                                        </Accordion.Panel>
-                                                                                </Accordion>
+                                                                        <h4 className='mb-4 text-xl font-medium text-red-500'>Tổng quan</h4>
+                                                                        <div className='flex flex-col gap-3'>
+                                                                                <div className="flex flex-col gap-2">
+                                                                                        <p className="font-medium">Tôi có thể tìm thấy các bạn ở nơi nào khác trên Web? Facebook, Twitter?</p>
+                                                                                        <p className='text-sm'>Bạn có thể tìm thấy các tin tức và cập nhật mới nhất của chúng tôi trên Facebook và trên Twitter.</p>
+                                                                                </div>
+                                                                                <div className="flex flex-col gap-2">
+                                                                                        <p className="font-medium">Tôi có thể tìm thấy các bạn ở nơi nào khác trên Web? Facebook, Twitter?</p>
+                                                                                        <p className='text-sm'>Bạn có thể tìm thấy các tin tức và cập nhật mới nhất của chúng tôi trên Facebook và trên Twitter.</p>
+                                                                                </div>
+                                                                                <div className="flex flex-col gap-2">
+                                                                                        <p className="font-medium">Tôi có thể tìm thấy các bạn ở nơi nào khác trên Web? Facebook, Twitter?</p>
+                                                                                        <p className='text-sm'>Bạn có thể tìm thấy các tin tức và cập nhật mới nhất của chúng tôi trên Facebook và trên Twitter.</p>
+                                                                                </div>
                                                                         </div>
                                                                 </div>
                                                                 <div className='mt-5'>
-                                                                        <h4 className='text-xl font-medium text-red-500'>Đánh giá</h4>
-                                                                        <div className='mt-4'>
-                                                                                <Accordion>
-                                                                                        <Accordion.Panel>
-                                                                                                <Accordion.Title>What is Flowbite?</Accordion.Title>
-                                                                                                <Accordion.Content>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons,
-                                                                                                                dropdowns, modals, navbars, and more.
-                                                                                                        </p>
-                                                                                                        <p className="text-gray-500 dark:text-gray-400">
-                                                                                                                Check out this guide to learn how to&nbsp;
-                                                                                                                <a
-                                                                                                                        href="https://flowbite.com/docs/getting-started/introduction/"
-                                                                                                                        className="text-cyan-600 hover:underline dark:text-cyan-500"
-                                                                                                                >
-                                                                                                                        get started&nbsp;
-                                                                                                                </a>
-                                                                                                                and start developing websites even faster with components on top of Tailwind CSS.
-                                                                                                        </p>
-                                                                                                </Accordion.Content>
-                                                                                        </Accordion.Panel>
-                                                                                        <Accordion.Panel>
-                                                                                                <Accordion.Title>Is there a Figma file available?</Accordion.Title>
-                                                                                                <Accordion.Content>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                Flowbite is first conceptualized and designed using the Figma software so everything you see in the library
-                                                                                                                has a design equivalent in our Figma file.
-                                                                                                        </p>
-                                                                                                        <p className="text-gray-500 dark:text-gray-400">
-                                                                                                                Check out the
-                                                                                                                <a href="https://flowbite.com/figma/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                                                                                                                        Figma design system
-                                                                                                                </a>
-                                                                                                                based on the utility classes from Tailwind CSS and components from Flowbite.
-                                                                                                        </p>
-                                                                                                </Accordion.Content>
-                                                                                        </Accordion.Panel>
-                                                                                        <Accordion.Panel>
-                                                                                                <Accordion.Title>What are the differences between Flowbite and Tailwind UI?</Accordion.Title>
-                                                                                                <Accordion.Content>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                The main difference is that the core components from Flowbite are open source under the MIT license, whereas
-                                                                                                                Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone
-                                                                                                                components, whereas Tailwind UI offers sections of pages.
-                                                                                                        </p>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">
-                                                                                                                However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no
-                                                                                                                technical reason stopping you from using the best of two worlds.
-                                                                                                        </p>
-                                                                                                        <p className="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                                                                                                        <ul className="list-disc pl-5 text-gray-500 dark:text-gray-400">
-                                                                                                                <li>
-                                                                                                                        <a href="https://flowbite.com/pro/" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                                                                                                                                Flowbite Pro
-                                                                                                                        </a>
-                                                                                                                </li>
-                                                                                                                <li>
-                                                                                                                        <a
-                                                                                                                                href="https://tailwindui.com/"
-                                                                                                                                rel="nofollow"
-                                                                                                                                className="text-cyan-600 hover:underline dark:text-cyan-500"
-                                                                                                                        >
-                                                                                                                                Tailwind UI
-                                                                                                                        </a>
-                                                                                                                </li>
-                                                                                                        </ul>
-                                                                                                </Accordion.Content>
-                                                                                        </Accordion.Panel>
-                                                                                </Accordion>
+                                                                        <h4 className='mb-4 text-xl font-medium text-red-500'>Đánh giá</h4>
+                                                                        <div className='flex flex-col gap-3'>
+                                                                                <div className="flex flex-col gap-2">
+                                                                                        <p className="font-medium">Tôi có thể tìm thấy các bạn ở nơi nào khác trên Web? Facebook, Twitter?</p>
+                                                                                        <p className='text-sm'>Bạn có thể tìm thấy các tin tức và cập nhật mới nhất của chúng tôi trên Facebook và trên Twitter.</p>
+                                                                                </div>
+                                                                                <div className="flex flex-col gap-2">
+                                                                                        <p className="font-medium">Tôi có thể tìm thấy các bạn ở nơi nào khác trên Web? Facebook, Twitter?</p>
+                                                                                        <p className='text-sm'>Bạn có thể tìm thấy các tin tức và cập nhật mới nhất của chúng tôi trên Facebook và trên Twitter.</p>
+                                                                                </div>
+                                                                                <div className="flex flex-col gap-2">
+                                                                                        <p className="font-medium">Tôi có thể tìm thấy các bạn ở nơi nào khác trên Web? Facebook, Twitter?</p>
+                                                                                        <p className='text-sm'>Bạn có thể tìm thấy các tin tức và cập nhật mới nhất của chúng tôi trên Facebook và trên Twitter.</p>
+                                                                                </div>
                                                                         </div>
                                                                 </div>
                                                         </div>
@@ -409,10 +297,12 @@ const About = () => {
                                                 </div>
                                         </div>
                                 </div>
+
+
                                 <div className={`${tab == "3" ? "flex" : "hidden"} py-12`}>
                                         <div className="container">
-                                                <div className="flex gap-12">
-                                                        <div className="w-3/5">
+                                                <div className="flex flex-col md:flex-row gap-12">
+                                                        <div className="w-full md:w-3/5">
                                                                 <h2 className="text-3xl font-bold">Điều khoản sử dụng</h2>
                                                                 <h3 className='text-2xl mt-3'>Websiteplanet.com Terms of Use</h3>
                                                                 <p className='text-sm mt-2'>The terms of use below constitute a legal Agreement between you (Herein referred to as “The Customer”) and Websiteplanet.com. (Herein referred to as “The Company”), legal owner of the domain name and web site Websiteplanet (Herein referred to as “The Website”), each referred to herein as a “Party” and collectively as the “Parties”. Your agreement to be bound by these terms is acknowledged by your use of the Company Services which includes, but is not limited to visiting the website, using its internal and external links for search of information, contacting Company representatives, Support Services and/or any software made available to you by Company.</p>
@@ -452,10 +342,12 @@ const About = () => {
                                                 </div>
                                         </div>
                                 </div>
+
+
                                 <div className={`${tab == "4" ? "flex" : "hidden"} py-12`}>
                                         <div className="container">
-                                                <div className="flex gap-12">
-                                                        <div className="w-3/5">
+                                                <div className="flex flex-col md:flex-row gap-12">
+                                                        <div className="w-full md:w-3/5">
                                                                 <h2 className="text-3xl font-bold">Privacy Policy</h2>
                                                                 <div className='mt-5'>
                                                                         <h4 className='mb-4 text-xl font-medium text-red-500'>Websiteplanet.com Privacy Policy</h4>

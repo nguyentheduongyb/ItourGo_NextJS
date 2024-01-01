@@ -1,7 +1,9 @@
 'use client'
 import React from "react";
 import Link from "next/link";
-import Navbar from "./Navbar";
+import Contact from "./Contact";
+import { Navbar } from 'flowbite-react';
+
 import { MdKeyboardArrowDown, MdLanguage } from "react-icons/md"
 import { FaRegUserCircle } from "react-icons/fa"
 import Search from "./Search";
@@ -49,8 +51,27 @@ const Header = () => {
         return (
                 <header>
                         <div className="w-full bg-white sticky top-0 z-[40] shadow-sm">
-                                <Navbar />
-                                <div className="w-full h-[64px]">
+                                <Contact />
+                                <div className="container">
+                                        <Navbar fluid rounded>
+                                                <Navbar.Brand as={Link} href="https://flowbite-react.com">
+                                                        <img src="/itourgo-logo.png" className="mr-3 h-16 sm:h-12" alt="Flowbite React Logo" />
+                                                </Navbar.Brand>
+                                                <Navbar.Toggle />
+                                                <Navbar.Collapse>
+
+                                                        {arr.map((item, index) => (
+                                                                <Navbar.Link key={index} href="#">
+                                                                        {item.title}
+                                                                </Navbar.Link>
+                                                        ))}
+                                                        <Navbar.Link href="#" className="flex gap-4"><MdLanguage size="26" />
+                                                                VN</Navbar.Link>
+                                                        <Navbar.Link href="#" className="flex gap-4"><FaRegUserCircle size="26" />Đăng nhập</Navbar.Link>
+                                                </Navbar.Collapse>
+                                        </Navbar>
+                                </div>
+                                {/* <div className="w-full h-[64px]">
                                         <div className="flex items-center h-full container justify-between">
                                                 <Link href="/"><img className="h-[64px]" src="/itourgo-logo.png" alt="" /></Link>
                                                 {pathname === "/" ? "" : <Search />}
@@ -82,7 +103,7 @@ const Header = () => {
                                                         </Link>
                                                 </div>
                                         </div>
-                                </div>
+                                </div> */}
                         </div >
                         {pathname === "/" ? <SearchMain /> : ""}
                 </header>

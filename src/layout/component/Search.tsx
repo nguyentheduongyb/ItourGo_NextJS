@@ -16,7 +16,7 @@ const Search = () => {
                         visible={showResult}
                         onClickOutside={handleHideResult}
                         render={() => {
-                                return (<div className="flex flex-col border w-[400px] min-h-[100px] bg-white shadow-lg rounded-lg pt-[8px] top-0">
+                                return (<div className="hidden md:flex flex-col border w-[400px] min-h-[100px] bg-white shadow-lg rounded-lg pt-[8px] top-0">
                                         <div className="px-3">
                                                 <div className="mt-3 pb-2">
                                                         <h6 className='uppercase text-sm text-[color:var(--primary-color)] py-1 border-b cursor-pointer'>places</h6>
