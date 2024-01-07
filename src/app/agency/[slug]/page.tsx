@@ -16,8 +16,8 @@ const Agency = () => {
         return (
                 <div className="mt-12">
                         <div className="container">
-                                <div className="flex gap-8 grid grid-cols-3">
-                                        <div className="rounded-lg bg-no-repeat bg-center relative bg-cover w-full h-36 overflow-hidden" style={{ backgroundImage: 'url("https://down-ws-vn.img.susercontent.com/vn-11134210-7qukw-lgnjqt6ihlgz60_tn.webp")' }}>
+                                <div className="gap-8 flex">
+                                        <div className="w-3/5 rounded-lg bg-no-repeat bg-center relative bg-contain h-36 overflow-hidden" style={{ backgroundImage: 'url("https://down-ws-vn.img.susercontent.com/vn-11134210-7qukw-lgnjqt6ihlgz60_tn.webp")' }}>
                                                 <div className="absolute w-full h-full bg-[rgba(0,0,0,0.3)]"></div>
                                                 <div className="flex flex-col justify-between w-full h-full px-4 py-3 absolute">
                                                         <div className="flex gap-3">
@@ -27,53 +27,53 @@ const Agency = () => {
                                                                         <p className="text-xs text-gray-400">Online 5 phút trước</p>
                                                                 </div>
                                                         </div>
-                                                        <div className="flex gap-4 grid grid-cols-2">
+                                                        <div className="gap-4 grid grid-cols-2">
                                                                 <button className="rounded border border-white text-white flex items-center justify-center gap-2"><GoPlus /><span>Theo dõi</span></button>
                                                                 <button className="rounded border border-white text-white  flex items-center justify-center gap-2"><BiChat /><span>Chat</span></button>
                                                         </div>
                                                 </div>
                                         </div>
-
-
-                                        <div className="flex flex-col justify-between">
-                                                <div className="flex gap-4 items-center py-2">
-                                                        <BsShop />
-                                                        <span className="capitalize">Sản phẩm</span>
-                                                        <span className="line-clamp-1">312</span>
+                                        <div className='flex-1 flex justify-between'>
+                                                <div className="flex flex-col justify-between">
+                                                        <div className="flex gap-4 items-center py-2">
+                                                                <BsShop />
+                                                                <span className="capitalize">Sản phẩm</span>
+                                                                <span className="line-clamp-1">312</span>
+                                                        </div>
+                                                        <div className="flex gap-4 items-center py-2">
+                                                                <BsShop />
+                                                                <span className="capitalize">Đang theo</span>
+                                                                <span className="line-clamp-1">312</span>
+                                                        </div>
+                                                        <div className="flex gap-4 items-center py-2">
+                                                                <BsShop />
+                                                                <span className="capitalize">Tỉ lệ phản hồi chat</span>
+                                                                <span className="line-clamp-1">312</span>
+                                                        </div>
                                                 </div>
-                                                <div className="flex gap-4 items-center py-2">
-                                                        <BsShop />
-                                                        <span className="capitalize">Đang theo</span>
-                                                        <span className="line-clamp-1">312</span>
-                                                </div>
-                                                <div className="flex gap-4 items-center py-2">
-                                                        <BsShop />
-                                                        <span className="capitalize">Tỉ lệ phản hồi chat</span>
-                                                        <span className="line-clamp-1">312</span>
+                                                <div className="flex flex-col justify-between">
+                                                        <div className="flex gap-4 items-center py-2">
+                                                                <BsShop />
+                                                                <span className="capitalize">Người theo dõi</span>
+                                                                <span className="line-clamp-1">312</span>
+                                                        </div>
+                                                        <div className="flex gap-4 items-center py-2">
+                                                                <BsShop />
+                                                                <span className="capitalize">Đánh giá</span>
+                                                                <span className="line-clamp-1">312</span>
+                                                        </div>
+                                                        <div className="flex gap-4 items-center py-2">
+                                                                <BsShop />
+                                                                <span className="capitalize">Nhà cung cấp</span>
+                                                                <span className="line-clamp-1">312</span>
+                                                        </div>
                                                 </div>
                                         </div>
 
-                                        <div className="flex flex-col justify-between">
-                                                <div className="flex gap-4 items-center py-2">
-                                                        <BsShop />
-                                                        <span className="capitalize">Người theo dõi</span>
-                                                        <span className="line-clamp-1">312</span>
-                                                </div>
-                                                <div className="flex gap-4 items-center py-2">
-                                                        <BsShop />
-                                                        <span className="capitalize">Đánh giá</span>
-                                                        <span className="line-clamp-1">312</span>
-                                                </div>
-                                                <div className="flex gap-4 items-center py-2">
-                                                        <BsShop />
-                                                        <span className="capitalize">Nhà cung cấp</span>
-                                                        <span className="line-clamp-1">312</span>
-                                                </div>
-                                        </div>
                                 </div>
                                 <div className="mt-4">
                                         <h6 className="text-[color:var(--primary-color)] font-medium">Thông tin</h6>
-                                        <p className="text-xs mt-3">I always believe that success in business depends on how we impact on our clients and employees and whether we are able to enrich their life. A truly great organization must treat the people inside and outside with utmost care, respect and appreciation.
+                                        <p className="text-sm mt-3">I always believe that success in business depends on how we impact on our clients and employees and whether we are able to enrich their life. A truly great organization must treat the people inside and outside with utmost care, respect and appreciation.
                                                 When 365 Travel was established in 2006, I had a burning passion to make every trip the customer’s greatest experience ever. That passion which started our journey into the realm of tour operation continues to drive us today. It undoubtedly demands a great deal of constant team and individual effort from the frontline to the boardroom day in and day out. Our will and hard work have transformed, 365 Travel from a tinny and unknown tour operator into one of Vietnam’s leading and most trusted destination management companies. Marking every year with unceasing growth of revenues and profit, we have extended our sales network to 100 agents around the world and reached the volume of over 12,000 travelers coming to Southeast Asia through Vietnam.
 
                                                 I am well aware that 365 Travel’s achievements would be impossible without the contribution of our dedicated staff and the extraordinary support of our partners and customers. From the bottom of my heart, I would like to extend since thanks to you all. My deep gratitude goes to my teammates at 365 Travel who are striving tirelessly to ensure the highest level of satisfaction for every traveler on tour with us.</p>
@@ -81,7 +81,7 @@ const Agency = () => {
                         </div>
 
                         {/* Tab */}
-                        <div className="mt-8 border-b w-full">
+                        <div className="mt-6 border-b w-full">
                                 <div className="container">
                                         <div className="grid grid-flow-col justify-stretch uppercase">
                                                 <button id={`1`} onClick={handleChangeTab} className={`px-2 py-3 flex justify-center ${tab == 1 ? "border-b border-b-4 border-b-red-500 text-red-500" : ""}`}>
@@ -112,36 +112,36 @@ const Agency = () => {
                         <div className="bg-[#ccc]">
                                 <div className="container">
                                         <div className={`${tab == 1 ? "flex" : "hidden"}`}>
-                                        
-                                        <div className="flex flex-col gap-5">
-                                        <div className="bg-white border-t-3 grid grid-cols-6 my-6 text-center text-sm">
-                                                <div className="border-slate-300 py-2 cursor-pointer">
-                                                       Tất cả
-                                                </div>
-                                                <div className=" py-2 cursor-pointer">
-                                                        5 Sao
-                                                </div>
-                                                <div className="py-2 cursor-pointer ">
-                                                        4 Sao
-                                                </div>
-                                                <div className="py-2 cursor-pointer">
-                                                        3 Sao
-                                                </div>
-                                                <div className="py-2 cursor-pointer">
-                                                        2 Sao
-                                                </div>
-                                                <div className="py-2 cursor-pointer">
-                                                        1 Sao
+
+                                                <div className="flex flex-col gap-5 py-6">
+                                                        <div className="bg-white border-t-3 grid grid-cols-6 text-center text-sm">
+                                                                <div className="border-slate-300 py-2 cursor-pointer">
+                                                                        Tất cả
+                                                                </div>
+                                                                <div className=" py-2 cursor-pointer">
+                                                                        5 Sao
+                                                                </div>
+                                                                <div className="py-2 cursor-pointer ">
+                                                                        4 Sao
+                                                                </div>
+                                                                <div className="py-2 cursor-pointer">
+                                                                        3 Sao
+                                                                </div>
+                                                                <div className="py-2 cursor-pointer">
+                                                                        2 Sao
+                                                                </div>
+                                                                <div className="py-2 cursor-pointer">
+                                                                        1 Sao
+                                                                </div>
+                                                        </div>
+                                                        <Review />
+                                                        <Review />
+                                                        <Review />
+                                                        <Review />
+                                                        <Review />
                                                 </div>
                                         </div>
-                                                <Review />
-                                                <Review />
-                                                <Review />
-                                                <Review />
-                                                <Review />
-                                        </div>  
-                                        </div>
-                                            
+
                                         <div className={`${tab == 2 ? "flex" : "hidden"} grid grid-cols-5 gap-8 py-12`}>
                                                 <Link href="/tour/day-la-bai-viet-1" className="overflow-hidden rounded bg-white drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
                                                         <div className="w-full pt-[100%] bg-no-repeat bg-center bg-cover" style={{ backgroundImage: 'url("https://media.vietravel.com/images/Content/ba-na-hills.jpg")' }}>

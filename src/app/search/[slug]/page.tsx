@@ -16,8 +16,8 @@ const SearchPage = () => {
                                 <Breadcrumb.Item>Tour Hà Nội Số 1</Breadcrumb.Item>
                         </Breadcrumb>
                         <div className="mt-4 pb-4 border-b">
-                                <h1 className='text-2xl font-bold'>Asia Tours & Trips 2024</h1>
-                                <p className='text-sm mt-3 line-clamp-4'>Whether you have your heart set on gazing at Indias Golden Triangle, eating the best Pad Thai youve ever tasted or ticking off your bucket list at the Great Wall, an Asian vacation offers a multitude of experiences hard to find anywhere else in the world. Ride a camel in the Gobi Desert, climb the mighty Mount Everest, relax on the golden beaches of Bali and explore the incredible Korean capital, Seoul. From cultural immersions to unbeatable hiking adventure opportunities, a tour throughout Asia will not fail to delight even the toughest of critics.</p>
+                                <h1 className='text-2xl font-bold'>Du lịch & Chuyến đi Châu Á 2024</h1>
+                                <p className='text-sm mt-3 line-clamp-4'>Cho dù bạn muốn ngắm nhìn Tam giác vàng của Ấn Độ, thưởng thức món Pad Thái ngon nhất mà bạn từng nếm hay đánh dấu vào danh sách những việc phải làm tại Vạn Lý Trường Thành, một kỳ nghỉ ở châu Á sẽ mang đến vô số trải nghiệm khó có thể tìm thấy ở bất kỳ nơi nào khác trên thế giới. Cưỡi lạc đà trên sa mạc Gobi, leo lên đỉnh Everest hùng vĩ, thư giãn trên những bãi biển vàng của Bali và khám phá thủ đô Seoul đáng kinh ngạc của Hàn Quốc. Từ sự hòa nhập văn hóa đến những cơ hội phiêu lưu đi bộ đường dài không thể tuyệt vời hơn, một chuyến du lịch khắp châu Á sẽ không làm hài lòng ngay cả những nhà phê bình khó tính nhất.</p>
                         </div>
                         <div className="w-full flex  flex-col md:flex-row md:gap-10 mt-4">
                                 {/* Content left*/}
@@ -27,7 +27,7 @@ const SearchPage = () => {
                                 </div>
                                 {/* Content right */}
                                 <div className="flex-1">
-                                        <p className='my-4'>Best 250+ Golden Triangle tours in India with 3,746 reviews</p>
+                                        <p className='my-4'>Hơn 250 chuyến tham quan Tam giác vàng hay nhất ở Ấn Độ với 3.746 đánh giá</p>
                                         <SearchResult />
                                         <div className="flex justify-center mt-6">
                                                 <button className="font-bold text-[color:var(--primary-color)] px-5 py-3 rounded-lg border border-[color:var(--primary-color)]">Xem thêm 500 khách sạn</button>
@@ -36,7 +36,7 @@ const SearchPage = () => {
                         </div>
                         <div className='rounded border mt-4'>
                                 <h6 className='flex gap-3 px-4 py-1 bg-[#F9F9F9] items-center font-bold'><MdKeyboardArrowRight /> Khách sạn Đà Lạt theo hạng sao</h6>
-                                <div className="bg-white flex gap-3 grid grid-cols-3 p-4">
+                                <div className="bg-white gap-3 grid grid-cols-3 p-4">
                                         <Link href="" className='text-blue-500'>Khách sạn 1 tại Đà Lạt</Link>
                                         <Link href="" className='text-blue-500'>Khách sạn 1 tại Đà Lạt</Link>
                                         <Link href="" className='text-blue-500'>Khách sạn 1 tại Đà Lạt</Link>

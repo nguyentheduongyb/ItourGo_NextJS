@@ -54,7 +54,7 @@ const Header = () => {
                                 <Contact />
                                 <div className="container">
                                         <Navbar fluid rounded>
-                                                <Navbar.Brand as={Link} href="https://flowbite-react.com">
+                                                <Navbar.Brand as={Link} href="/">
                                                         <img src="/itourgo-logo.png" className="mr-3 h-16 sm:h-12" alt="Flowbite React Logo" />
                                                 </Navbar.Brand>
                                                 <Navbar.Toggle />

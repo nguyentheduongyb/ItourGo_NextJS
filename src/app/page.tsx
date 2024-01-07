@@ -1,75 +1,84 @@
 'use client'
+import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { BsFillSunFill } from 'react-icons/bs';
 import { FaStar } from "react-icons/fa"
+import { MdCelebration } from 'react-icons/md';
 import API from '~/API';
 
 
 const Home = () => {
-  const [data, setData] = useState<any[]>([])
-  useEffect(() => {
-    API.get("api/tour")
-      .then((response) => {
-        console.log(response);
-        setData(response.data)
-      })
-      .catch((error) => {
-        throw new Error(error)
-      })
-  }, [])
+  const [data, setData] = useState<any[]>([1, 2, 3, 4, 5])
+  // useEffect(() => {
+  //   API.get("api/tour")
+  //     .then((response) => {
+  //       console.log(response);
+
+  //       setData([1, 2, 3])
+  //     })
+  //     .catch((error) => {
+  //       throw new Error(error)
+  //     })
+  // }, [])
   return (
     <div>
       <section className='my-8'>
         <div className='container'>
           <div className='relative w-full pt-[80%] md:pt-[26.5%] rounded-2xl bg-center bg-no-repeat bg-cover flex justify-center' style={{ backgroundImage: 'url("https://preview.colorlib.com/theme/direngine/images/bg_1.jpg.webp")' }}>
-            <div className='absolute w-full h-full left-0 top-0 p-12 md:p-20 space-y-4 text-white'>
-              <h5 className='text-3xl font-bold capitalize line-clamp-1'>Holiday travel deals are here</h5>
-              <p className='line-clamp-2'>The season of giving is not over! Gift the world at up to 50% off now!</p>
-              <button className='text-black font-bold rounded-full px-6 py-2 bg-white'>Check out</button>
+            <div className='absolute w-full h-full left-0 top-0 p-12 md:p-20 space-y-6 text-white'>
+              <h5 className='text-3xl font-bold capitalize line-clamp-1'>Ưu đãi kì du lịch của bạn ở đây</h5>
+              <p className='line-clamp-2'>Mùa ưu đãi vẫn chưa kết thúc. Nhận ngay ưu đãi đến 50%</p>
+              <button className='text-black font-medium rounded-full px-6 py-2 bg-white'>Tìm hiểu ngay</button>
             </div>
           </div>
           <div className='mt-[-80px] relative w-full'>
             <div className='w-full bottom-[-40%]'>
-              <div className='mx-auto rounded-2xl w-[94%] md:w-[86%]'>
-                <div className='flex gap-4 w-full overflow-auto scrollbar-hide pb-4'>
+              <div className='mx-auto rounded-2xl w-[94%]'>
+                <div className='flex gap-4 w-full overflow-auto scrollbar-hide pb-4 md:px-8'>
                   <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
                     <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="rounded-2xl overflow-hidden">
+                      <div className="relative rounded-2xl overflow-hidden">
                         <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/V2aYSJ.jpg" alt="" />
+                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
                       </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Việt Nam</h5>
+                      <h5 className="px-4 pb-2 pt-3 font-semibold">Europe Deals</h5>
                     </div>
                   </Link>
                   <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
                     <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/V2aYSJ.jpg" alt="" />
+                      <div className="relative rounded-2xl overflow-hidden">
+                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/Rz5Mdv.png" alt="" />
+                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
                       </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Việt Nam</h5>
+                      <h5 className="px-4 pb-2 pt-3 font-semibold">Europe Deals</h5>
                     </div>
                   </Link>
                   <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
                     <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/V2aYSJ.jpg" alt="" />
+                      <div className="relative rounded-2xl overflow-hidden">
+                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/C3MOCS.png" alt="" />
+                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
                       </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Việt Nam</h5>
+                      <h5 className="px-4 pb-2 pt-3 font-semibold">Italia Deals</h5>
                     </div>
                   </Link>
                   <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
                     <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/V2aYSJ.jpg" alt="" />
+                      <div className="relative rounded-2xl overflow-hidden">
+                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/ypgiOX.png" alt="" />
+                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
                       </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Việt Nam</h5>
+                      <h5 className="px-4 pb-2 pt-3 font-semibold">Japan Deals</h5>
                     </div>
                   </Link>
                   <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
                     <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/V2aYSJ.jpg" alt="" />
+                      <div className="relative rounded-2xl overflow-hidden">
+                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/hbdQyn.png" alt="" />
+                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
                       </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Việt Nam</h5>
+                      <h5 className="px-4 pb-2 pt-3 font-semibold">Peru Deals</h5>
                     </div>
                   </Link>
                 </div>
@@ -79,18 +88,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className='my-8'>
+      {/* <section className='my-8'>
         <div className="container">
-          <h1 className="text-2xl font-medium mb-6 capitalize">Tour bạn đã xem gần đây</h1>
-          <div className='grid grid-cols-1 md:grid-cols-4 gap-6'>
+          <h1 className="text-2xl font-medium uppercase mb-6 text-center">Các tour nổi bật trong tháng</h1>
+          <div className='grid grid-cols-1 md:grid-cols-5 gap-6'>
             {data.map((item, index): any => (
-              <Link key={index} href={`/tour/${item.slug}`} className='block bg-white hover:bg-blue-100 rounded-xl overflow-hidden border'>
+              <Link key={index} href={`/tour/${item.slug}`} className='block bg-white overflow-hidden'>
                 <div className='w-full'>
-                  <img className='w-full object-cover' src="https://cdn.tourradar.com/s3/tour/360x210/70596_f3501d.jpg" alt="" />
+                  <img className='w-full object-cover  rounded-xl' src="https://cdn.tourradar.com/s3/tour/360x210/70596_f3501d.jpg" alt="" />
                 </div>
-                <div className='flex-1 flex flex-col justify-between p-4 md:py-1'>
+                <div className='flex-1 flex flex-col justify-between md:py-1'>
                   <div className='space-y-2'>
-                    <h6 className='font-bold line-clamp-1 capitalize text-xl'>{item.name}</h6>
+                    <h6 className='font-medium line-clamp-1 capitalize'>{item.name}</h6>
                     <p className='flex gap-2 text-xs items-center'>
                       <span>{item.period}</span>
                       <span>{item.rate}</span>
@@ -99,7 +108,7 @@ const Home = () => {
                     </p>
                     <p className='flex items-center gap-1'>
                       <span>From</span>
-                      <span className='line-through'>{item.expectedCost}</span>
+                      <span className='line-through'>${item.expectedCost}</span>
                       <span className='text-red-500 ml-auto'>${item.expectedCost}</span>
                     </p>
                   </div>
@@ -110,44 +119,100 @@ const Home = () => {
 
           </div>
         </div>
+      </section> */}
+
+      <section className='my-8'>
+        <p className="text-2xl font-medium uppercase mb-6 text-center">Các tour nổi bật trong tháng</p>
+        <div className='px-4 grid grid-cols-1 md:grid-cols-3 gap-4'>
+          <Link className='relative w-full rounded overflow-hidden' href="">
+            <img src="https://cdn.tourradar.com/s3/tour/360x210/216153_633ffb37421ae.jpg" className='w-full' alt="" />
+            <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
+              <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
+              <div className='z-10 space-y-3'>
+                <h6 className='uppercase text-white font-medium text-xl'>Miền tây trong ngày</h6>
+                <p className='text-white'>Giá: 450.000 VNĐ</p>
+                <button className='py-1 px-3 rounded-full border bg-transparent hover:bg-[var(--primary-color)] hover:text-white font-medium text-[#ccc]'>Đặt ngay</button>
+              </div>
+            </div>
+          </Link>
+          <Link className='relative w-full rounded overflow-hidden' href="">
+            <img src="https://cdn.tourradar.com/s3/tour/360x210/246976_64928ab093294.jpg" className='w-full' alt="" />
+            <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
+              <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
+              <div className='z-10 space-y-3'>
+                <h6 className='uppercase text-white font-medium text-xl'>Miền tây trong ngày</h6>
+                <p className='text-white'>Giá: 450.000 VNĐ</p>
+                <button className='py-1 px-3 rounded-full border bg-transparent hover:bg-[var(--primary-color)] hover:text-white font-medium text-[#ccc]'>Đặt ngay</button>
+              </div>
+            </div>
+          </Link>
+          <Link className='relative w-full rounded overflow-hidden' href="">
+            <img src="https://cdn.tourradar.com/s3/tour/360x210/152897_5e5f03dc274b1.jpg" className='w-full' alt="" />
+            <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
+              <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
+              <div className='z-10 space-y-3'>
+                <h6 className='uppercase text-white font-medium text-xl'>Miền tây trong ngày</h6>
+                <p className='text-white'>Giá: 450.000 VNĐ</p>
+                <button className='py-1 px-3 rounded-full border bg-transparent hover:bg-[var(--primary-color)] hover:text-white font-medium text-[#ccc]'>Đặt ngay</button>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+      <section className='my-8'>
+        <p className="text-2xl font-medium uppercase mb-6 text-center">Các tour chính của chúng tôi</p>
+        <div className='container grid grid-cols-2 md:grid-cols-4 gap-4'>
+          {data.map((item, index) => (
+            <Link key={index} className='relative w-full rounded overflow-hidden pt-[100%] first:row-span-2 first:col-span-2 bg-no-repeat bg-center bg-cover' href="" style={{ backgroundImage: 'url("https://tourbonphuong.com/upload/hinhanh/564341937216996_750x500.jpg")' }}>
+              <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
+                <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
+                <div className='z-10 space-y-3'>
+                  <h6 className='uppercase text-white font-medium text-xl'>Miền tây trong ngày</h6>
+                  <p className='text-white'>Giá: 450.000 VNĐ</p>
+                  <button className='py-1 px-3 rounded-full border bg-transparent hover:bg-[var(--primary-color)] hover:text-white font-medium text-[#ccc]'>Đặt ngay</button>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
-      <section className="container rounded-xl p-4 bg-[#E6F4FD] flex flex-col md:flex-col gap-4">
+      <section className="container rounded-xl p-4 bg-[#E6F4FD] flex flex-col md:flex-row gap-4">
         <div className="w-full md:w-2/5 flex flex-col gap-3">
-          <h1 className="font-bold text-xl">Organized Adventures: What are they?</h1>
-          <div className='flex flex-col gap-3 text-[15px] pr-6'>
-            <p>A multi-day travel experience seamlessly organized by a trusted operator—everything from logistics to meals to experiences to friendly guides. All you have to do is choose your adventure, pack your bags and go.</p>
-            <p>Embark on a transformative organized adventure today. Choose from more than 50,000 options via 2,500 trusted operators on our platform.</p>
+          <h1 className="font-bold text-xl">Cuộc phiêu lưu có tổ chức: Chúng là gì?</h1>
+          <div className='space-y-3 text-[15px] pr-6'>
+            <p>Trải nghiệm du lịch nhiều ngày được tổ chức liền mạch bởi một nhà điều hành đáng tin cậy—mọi thứ từ hậu cần, bữa ăn, trải nghiệm cho đến hướng dẫn viên thân thiện. Tất cả những gì bạn phải làm là chọn chuyến phiêu lưu, xách ba lô lên và đi.</p>
+            <p>Bắt tay vào một cuộc phiêu lưu có tổ chức mang tính biến đổi ngay hôm nay. Chọn từ hơn 50.000 tùy chọn thông qua 2.500 nhà khai thác đáng tin cậy trên nền tảng của chúng tôi.</p>
           </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 flex-1 gap-4">
           <Link href="" className='w-full p-2 rounded-xl bg-white flex flex-col gap-3 hover:drop-shadow'>
             <div className='rounded-xl w-full pt-[60%] md:pt-[45%] bg-center bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/464x208/xoOlJd.jpg")' }}></div>
-            <h6 className='font-medium'>Group Adventure</h6>
-            <p className='text-sm'>Join a group and forge lifelong friendships.</p>
-            <p className="font-medium text-sm text-[color:var(--primary-color)]">Explore</p>
+            <h6 className='font-medium'>Cuộc phiêu lưu nhóm</h6>
+            <p className='text-sm'>Tham gia một nhóm và xây dựng tình bạn lâu dài.</p>
+            <p className="font-medium text-sm text-[color:var(--primary-color)]">Khám phá</p>
           </Link>
           <Link href="" className='w-full p-2 rounded-xl bg-white flex flex-col gap-3 hover:drop-shadow'>
-            <div className='rounded-xl w-full pt-[60%] md:pt-[45%] bg-center bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/464x208/xoOlJd.jpg")' }}></div>
-            <h6 className='font-medium'>Group Adventure</h6>
-            <p className='text-sm'>Join a group and forge lifelong friendships.</p>
-            <p className="font-medium text-sm text-[color:var(--primary-color)]">Explore</p>
+            <div className='rounded-xl w-full pt-[60%] md:pt-[45%] bg-center bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/464x208/R2Shk8.png")' }}></div>
+            <h6 className='font-medium'>Cuộc phiêu lưu riêng tư</h6>
+            <p className='text-sm'>Du lịch độc quyền với nhóm của riêng bạn.</p>
+            <p className="font-medium text-sm text-[color:var(--primary-color)]">Khám phá</p>
           </Link>
           <Link href="" className='w-full p-2 rounded-xl bg-white flex flex-col gap-3 hover:drop-shadow'>
-            <div className='rounded-xl w-full pt-[60%] md:pt-[45%] bg-center bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/464x208/xoOlJd.jpg")' }}></div>
-            <h6 className='font-medium'>Group Adventure</h6>
-            <p className='text-sm'>Join a group and forge lifelong friendships.</p>
-            <p className="font-medium text-sm text-[color:var(--primary-color)]">Explore</p>
+            <div className='rounded-xl w-full pt-[60%] md:pt-[45%] bg-center bg-no-repeat bg-cover' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/464x208/bz3l7r.png")' }}></div>
+            <h6 className='font-medium'>Cuộc phiêu lưu cá nhân</h6>
+            <p className='text-sm'>Tùy chỉnh hành trình hiện có hoặc tạo hành trình của riêng bạn.</p>
+            <p className="font-medium text-sm text-[color:var(--primary-color)]">Khám phá</p>
           </Link>
         </div>
       </section>
 
-      <section className='my-12'>
+      <section className='my-8'>
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col-reverse md:flex-row gap-1 items-center text-center md:items-start md:text-start">
             <div className='flex flex-col gap-3 flex-1'>
-              <h4 className='font-bold text-xl capitalize'>Sustainable Travel</h4>
-              <p className="text-sm">Adventure sustainably with TourRadar. We are committed to conscious travel, from responsible operators to our Climate Action Plan and carbon measurements. <Link href="">View our pledge</Link></p>
+              <h4 className='font-bold text-xl capitalize'>Du lịch bền vững</h4>
+              <p className="text-sm">Phiêu lưu bền vững cùng TourRadar. Chúng tôi cam kết thực hiện việc đi lại có ý thức, từ những người điều hành có trách nhiệm đến Kế hoạch hành động vì khí hậu và các phép đo lượng carbon. <Link className='text-[var(--primary-color)]' href="">Cam kết của chúng tôi</Link></p>
             </div>
             <div className="w-40 h-[120px] bg-center bg-contain bg-no-repeat" style={{
               backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='77' height='87' fill='none'%3E%3Ccircle cx='39.5' cy='31.5' r='31.5' fill='%230A7BBD' opacity='.3'/%3E%3Cg clipPath='url(%23clip0_2205:13708)'%3E%3Cpath fill='%23fff' d='M19.5 26.5h-10c-.17 2.5-.4 8.3 0 11.5.5 4 2.5 7.5 5.5 12.5 2.4 4 10.33 8.67 14 10.5 0-1.33-.1-4.6-.5-7-.4-2.4 1.5-6 2.5-7.5.67-.33 2.5-1.8 4.5-5s.5-6.67-.5-8c-1-1.17-3.3-3.8-4.5-5-1.2-1.2-4.17-1.83-5.5-2h-5.5zM53 11h8.5l4.5 6c1.5 2 2.5 5.5 3.5 10.5.8 4 0 9-.5 11h-5.5c-1.6 0-3.33-2-4-3-1.17-1.67-3.6-5.2-4-6-.5-1-2.5-4.5-5-6a7.69 7.69 0 00-5-1c-1.83.17-5.5-.7-5.5-5.5s3.67-6 5.5-6H53z'/%3E%3Cpath fill='%232C3E50' d='M39.35 63.9A31.8 31.8 0 019.9 44.16a32.02 32.02 0 016.9-34.81 31.84 31.84 0 0154.4 22.59c0 8.47-3.36 16.6-9.33 22.59a31.82 31.82 0 01-22.53 9.35zm0-61.24a29.15 29.15 0 00-26.98 18.08 29.36 29.36 0 006.33 31.91 29.18 29.18 0 0049.86-20.7c0-7.77-3.08-15.22-8.56-20.71a29.17 29.17 0 00-20.65-8.58z'/%3E%3Cpath fill='%232C3E50' d='M28.73 62a1.33 1.33 0 01-1.33-1.33v-8.39c0-2.27.83-4.47 2.34-6.17l3.6-4.1a6.67 6.67 0 00-.26-9.13l-2.97-2.98a6.61 6.61 0 00-4.7-1.95H9.27a1.33 1.33 0 01-1.33-1.33 1.33 1.33 0 011.33-1.33H25.4a9.14 9.14 0 016.58 2.66l2.98 2.98a9.33 9.33 0 01.37 12.78l-3.48 4.16a6.64 6.64 0 00-1.67 4.41v8.39A1.36 1.36 0 0128.73 62zm37.44-22.07a9.22 9.22 0 01-7.73-4.15l-5.9-8.87a6.64 6.64 0 00-5.52-2.95h-1.14a7.3 7.3 0 01-7.3-7.32 7.33 7.33 0 017.3-7.32h15.4a1.33 1.33 0 011.33 1.33 1.33 1.33 0 01-1.33 1.33h-15.4a4.64 4.64 0 00-4.64 4.66 4.66 4.66 0 004.64 4.66h1.14a9.2 9.2 0 017.73 4.15l5.9 8.86a6.72 6.72 0 005.52 2.96h3a1.33 1.33 0 011.33 1.33 1.33 1.33 0 01-1.33 1.33h-3zM9.3 87a1.27 1.27 0 01-1.04-.5l-5.31-6.7a13.33 13.33 0 01-2.92-8.33V57.7a5.33 5.33 0 015.3-5.32 5.3 5.3 0 015.32 5.33v9.98a1.33 1.33 0 01-1.33 1.33 1.33 1.33 0 01-1.33-1.33v-9.98a2.67 2.67 0 00-2.65-2.67 2.65 2.65 0 00-2.66 2.67v13.76c0 2.42.83 4.77 2.34 6.65l5.3 6.71A1.33 1.33 0 019.3 87z'/%3E%3Cpath fill='%232C3E50' d='M22.57 86.73a1.33 1.33 0 01-1.33-1.33v-7.98c0-2.1-.61-4.16-1.78-5.91-.55-.56-1.2-1.23-1.78-1.87-3.87-4.15-4.48-4.52-6-3.51a2.37 2.37 0 00-.8 3.06l3.54 5.91a1.34 1.34 0 01-1.46 2c-.35-.1-.64-.31-.83-.62l-3.58-6.01a5.07 5.07 0 011.67-6.55c3.53-2.37 5.76 0 9.4 3.91l1.89 2.03a13.34 13.34 0 012.39 7.56v7.98a1.33 1.33 0 01-1.33 1.33zM67.7 87c-.3 0-.58-.1-.82-.3a1.33 1.33 0 01-.2-1.86l5.3-6.7a10.67 10.67 0 002.34-6.63V57.7a2.67 2.67 0 00-2.66-2.66 2.65 2.65 0 00-2.65 2.67v9.98a1.33 1.33 0 01-1.33 1.33 1.33 1.33 0 01-1.33-1.33v-9.98a5.33 5.33 0 015.31-5.33 5.3 5.3 0 015.31 5.33V71.5a13.5 13.5 0 01-2.9 8.3l-5.3 6.68a1.28 1.28 0 01-1.06.5z'/%3E%3Cpath fill='%232C3E50' d='M54.43 86.73a1.33 1.33 0 01-1.33-1.33v-7.98c0-2.63.78-5.2 2.23-7.38l2.05-2.2c3.66-3.92 5.87-6.3 9.4-3.92a5.03 5.03 0 011.72 6.47l-3.63 6.1a1.33 1.33 0 11-2.29-1.39l3.59-5.99a2.37 2.37 0 00-.85-2.98c-1.52-.99-2.13-.64-6 3.51L57.4 71.7a10.67 10.67 0 00-1.64 5.73v7.98a1.33 1.33 0 01-1.33 1.33z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2205:13708'%3E%3Cpath fill='%23fff' d='M0 0h77v87H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")`
@@ -155,11 +220,11 @@ const Home = () => {
           </div>
           <div className="flex flex-col-reverse md:flex-row gap-1 items-center text-center md:items-start md:text-start">
             <div className='flex flex-col gap-3 flex-1'>
-              <h4 className='font-bold text-xl capitalize'>Du Lịch Bền Vững</h4>
-              <p className="text-sm">Adventure sustainably with TourRadar. We are committed to conscious travel, from responsible operators to our Climate Action Plan and carbon measurements. <Link href="">View our pledge</Link></p>
+              <h4 className='font-bold text-xl capitalize'>An tâm</h4>
+              <p className="text-sm">Với dịch vụ chăm sóc khách hàng 24/7, điều kiện đặt chỗ linh hoạt và các lựa chọn bảo hiểm phong phú, chúng tôi luôn sẵn sàng hỗ trợ bạn khi kế hoạch thay đổi. <Link className='text-[var(--primary-color)]' href="">Tùy chọn của tôi</Link></p>
             </div>
             <div className="w-40 h-[120px] bg-center bg-contain bg-no-repeat" style={{
-              backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='77' height='87' fill='none'%3E%3Ccircle cx='39.5' cy='31.5' r='31.5' fill='%230A7BBD' opacity='.3'/%3E%3Cg clipPath='url(%23clip0_2205:13708)'%3E%3Cpath fill='%23fff' d='M19.5 26.5h-10c-.17 2.5-.4 8.3 0 11.5.5 4 2.5 7.5 5.5 12.5 2.4 4 10.33 8.67 14 10.5 0-1.33-.1-4.6-.5-7-.4-2.4 1.5-6 2.5-7.5.67-.33 2.5-1.8 4.5-5s.5-6.67-.5-8c-1-1.17-3.3-3.8-4.5-5-1.2-1.2-4.17-1.83-5.5-2h-5.5zM53 11h8.5l4.5 6c1.5 2 2.5 5.5 3.5 10.5.8 4 0 9-.5 11h-5.5c-1.6 0-3.33-2-4-3-1.17-1.67-3.6-5.2-4-6-.5-1-2.5-4.5-5-6a7.69 7.69 0 00-5-1c-1.83.17-5.5-.7-5.5-5.5s3.67-6 5.5-6H53z'/%3E%3Cpath fill='%232C3E50' d='M39.35 63.9A31.8 31.8 0 019.9 44.16a32.02 32.02 0 016.9-34.81 31.84 31.84 0 0154.4 22.59c0 8.47-3.36 16.6-9.33 22.59a31.82 31.82 0 01-22.53 9.35zm0-61.24a29.15 29.15 0 00-26.98 18.08 29.36 29.36 0 006.33 31.91 29.18 29.18 0 0049.86-20.7c0-7.77-3.08-15.22-8.56-20.71a29.17 29.17 0 00-20.65-8.58z'/%3E%3Cpath fill='%232C3E50' d='M28.73 62a1.33 1.33 0 01-1.33-1.33v-8.39c0-2.27.83-4.47 2.34-6.17l3.6-4.1a6.67 6.67 0 00-.26-9.13l-2.97-2.98a6.61 6.61 0 00-4.7-1.95H9.27a1.33 1.33 0 01-1.33-1.33 1.33 1.33 0 011.33-1.33H25.4a9.14 9.14 0 016.58 2.66l2.98 2.98a9.33 9.33 0 01.37 12.78l-3.48 4.16a6.64 6.64 0 00-1.67 4.41v8.39A1.36 1.36 0 0128.73 62zm37.44-22.07a9.22 9.22 0 01-7.73-4.15l-5.9-8.87a6.64 6.64 0 00-5.52-2.95h-1.14a7.3 7.3 0 01-7.3-7.32 7.33 7.33 0 017.3-7.32h15.4a1.33 1.33 0 011.33 1.33 1.33 1.33 0 01-1.33 1.33h-15.4a4.64 4.64 0 00-4.64 4.66 4.66 4.66 0 004.64 4.66h1.14a9.2 9.2 0 017.73 4.15l5.9 8.86a6.72 6.72 0 005.52 2.96h3a1.33 1.33 0 011.33 1.33 1.33 1.33 0 01-1.33 1.33h-3zM9.3 87a1.27 1.27 0 01-1.04-.5l-5.31-6.7a13.33 13.33 0 01-2.92-8.33V57.7a5.33 5.33 0 015.3-5.32 5.3 5.3 0 015.32 5.33v9.98a1.33 1.33 0 01-1.33 1.33 1.33 1.33 0 01-1.33-1.33v-9.98a2.67 2.67 0 00-2.65-2.67 2.65 2.65 0 00-2.66 2.67v13.76c0 2.42.83 4.77 2.34 6.65l5.3 6.71A1.33 1.33 0 019.3 87z'/%3E%3Cpath fill='%232C3E50' d='M22.57 86.73a1.33 1.33 0 01-1.33-1.33v-7.98c0-2.1-.61-4.16-1.78-5.91-.55-.56-1.2-1.23-1.78-1.87-3.87-4.15-4.48-4.52-6-3.51a2.37 2.37 0 00-.8 3.06l3.54 5.91a1.34 1.34 0 01-1.46 2c-.35-.1-.64-.31-.83-.62l-3.58-6.01a5.07 5.07 0 011.67-6.55c3.53-2.37 5.76 0 9.4 3.91l1.89 2.03a13.34 13.34 0 012.39 7.56v7.98a1.33 1.33 0 01-1.33 1.33zM67.7 87c-.3 0-.58-.1-.82-.3a1.33 1.33 0 01-.2-1.86l5.3-6.7a10.67 10.67 0 002.34-6.63V57.7a2.67 2.67 0 00-2.66-2.66 2.65 2.65 0 00-2.65 2.67v9.98a1.33 1.33 0 01-1.33 1.33 1.33 1.33 0 01-1.33-1.33v-9.98a5.33 5.33 0 015.31-5.33 5.3 5.3 0 015.31 5.33V71.5a13.5 13.5 0 01-2.9 8.3l-5.3 6.68a1.28 1.28 0 01-1.06.5z'/%3E%3Cpath fill='%232C3E50' d='M54.43 86.73a1.33 1.33 0 01-1.33-1.33v-7.98c0-2.63.78-5.2 2.23-7.38l2.05-2.2c3.66-3.92 5.87-6.3 9.4-3.92a5.03 5.03 0 011.72 6.47l-3.63 6.1a1.33 1.33 0 11-2.29-1.39l3.59-5.99a2.37 2.37 0 00-.85-2.98c-1.52-.99-2.13-.64-6 3.51L57.4 71.7a10.67 10.67 0 00-1.64 5.73v7.98a1.33 1.33 0 01-1.33 1.33z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2205:13708'%3E%3Cpath fill='%23fff' d='M0 0h77v87H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")`
+              backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='73' height='104' fill='none'%3E%3Cg clip-path='url(%23clip0_2205:13720)'%3E%3Cpath fill='%230A7BBD' d='M46 59l-9 9.5-.5.5-7.5-8c-3.33-2-9.3-7.5-6.5-13.5 2.8-6 8.17-4.83 10.5-3.5l3.5 3 4-3c1.67-1 5.9-1.9 9.5 2.5 3.6 4.4-1.17 10.17-4 12.5z' opacity='.3'/%3E%3Cpath fill='%232C3E50' fill-rule='evenodd' d='M43.86 44.29a5.89 5.89 0 00-4.18 1.74l-2.07 2.08c-.6.6-1.56.6-2.16 0l-2.08-2.08a5.7 5.7 0 00-1.5-1.11 5.95 5.95 0 00-6.86 9.5l.03.04L36.5 66.6h.03l11.49-12.15.03-.04a5.89 5.89 0 001.11-6.82v-.03a5.4 5.4 0 00-1.1-1.52l-.02-.02a5.9 5.9 0 00-4.18-1.74zm-3.43-2.36a8.93 8.93 0 0111.46 4.3 8.95 8.95 0 01-1.68 10.34L38.7 68.75a3.07 3.07 0 01-4.37 0L22.85 56.56a8.94 8.94 0 01-1.67-10.35 9.01 9.01 0 0112.04-4.03c.87.44 1.65 1 2.32 1.7l.99.99.99-1a8.95 8.95 0 012.9-1.95z' clipRule='evenodd'/%3E%3Cpath fill='%232C3E50' fill-rule='evenodd' d='M6.82 27.09a78.69 78.69 0 0159.36 0h.02a6.15 6.15 0 013.76 5.68v23.3a39.1 39.1 0 01-26.01 36.38l-3.39 1.24c-2.62.99-5.5.99-8.12 0l-3.39-1.24a38.97 38.97 0 01-26-36.38V32.76A6.17 6.17 0 016.8 27.1l.02-.01zm-.74 5.68v23.28a36.05 36.05 0 0023.99 33.53h.02l3.42 1.26c1.93.72 4.05.72 5.99 0l3.43-1.26a35.93 35.93 0 0023.99-33.53V32.77a3.11 3.11 0 00-1.9-2.86 75.65 75.65 0 00-57.05 0 3.1 3.1 0 00-1.89 2.86z' clipRule='evenodd'/%3E%3Cpath fill='%232C3E50' d='M13.69 15.6H1.52A1.52 1.52 0 01.45 13c.28-.28.67-.45 1.07-.45H13.7a1.52 1.52 0 011.07 2.6c-.28.3-.67.45-1.07.45z'/%3E%3Cpath fill='%232C3E50' d='M7.6 21.7a1.52 1.52 0 01-1.52-1.52V7.98a1.53 1.53 0 012.6-1.07c.28.28.44.67.44 1.07v12.2A1.53 1.53 0 017.6 21.7zm63.88 76.2H59.31a1.52 1.52 0 01-1.07-2.6c.28-.28.67-.44 1.07-.44h12.17a1.52 1.52 0 011.07 2.6c-.28.28-.67.44-1.07.44z'/%3E%3Cpath fill='%232C3E50' d='M65.4 104a1.52 1.52 0 01-1.53-1.53V90.28a1.53 1.53 0 012.6-1.08c.29.29.45.68.45 1.08v12.2A1.53 1.53 0 0165.4 104zM28.96 7.62h-9.13a1.52 1.52 0 01-1.07-2.6c.28-.29.67-.45 1.07-.45h9.13a1.52 1.52 0 011.07 2.6c-.28.3-.67.45-1.07.45z'/%3E%3Cpath fill='%232C3E50' d='M24.33 12.2a1.52 1.52 0 01-1.52-1.53V1.52a1.53 1.53 0 012.6-1.07c.28.28.44.67.44 1.07v9.15a1.53 1.53 0 01-1.52 1.52z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2205:13720'%3E%3Cpath fill='%23fff' d='M0 0h73v104H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")`
             }}></div>
           </div>
         </div>
@@ -168,36 +233,36 @@ const Home = () => {
       <section className='my-8'>
         <div className='container'>
           <h2 className='font-bold text-xl'>Chương Trình Tour Nổi Bật</h2>
-          <p>Find out what’s happening at TourRadar—from the latest travel news to our special offers.</p>
+          <p>Tìm hiểu những gì đang diễn ra tại ITOURGO tin tức du lịch mới nhất đến ưu đãi đặc biệt của chúng tôi.</p>
           <div className='grid grid-cols-1 md:grid-cols-4 gap-4 mt-6'>
             <Link href="" className='w-full rounded-2xl flex flex-col overflow-hidden border hover:drop-shadow'>
-              <div className='bg-no-repeat bg-center bg-cover w-full pt-[65%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/848x404/88b4Kh.png")' }}></div>
+              <div className='bg-no-repeat bg-center bg-cover w-full pt-[65%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/424x202/TeWjQf.png")' }}></div>
               <div className='p-4 flex flex-1 flex-col justify-between'>
                 <div className='pb-3 flex flex-col gap-3'>
-                  <h5 className='capitalize font-bold'>Our Climate action plane</h5>
-                  <p className='text-sm'>We aim to develop an impact measurement tool to simplify carbon measurement and reporting. We also set a goal for all operators to have sustainability plans by 2030.</p>
+                  <h5 className='capitalize font-bold'>Ưu đãi tháng 1 đang có hiệu lực</h5>
+                  <p className='text-sm line-clamp-3'>Thế giới đang chờ đợi bạn với mức giảm giá lên tới 60%!</p>
                 </div>
-                <p className='text-sm text-[color:var(--primary-color)]'>Read more</p>
+                <p className='text-sm text-[color:var(--primary-color)]'>Xem ưu đãi</p>
+              </div>
+            </Link>
+            <Link href="" className='w-full rounded-2xl flex flex-col overflow-hidden border hover:drop-shadow'>
+              <div className='bg-no-repeat bg-center bg-cover w-full pt-[65%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/424x202/pFVse1.jpg")' }}></div>
+              <div className='p-4 flex flex-1 flex-col justify-between'>
+                <div className='pb-3 flex flex-col gap-3'>
+                  <h5 className='capitalize font-bold'>Kế hoạch hành động về khí hậu của chúng tôi</h5>
+                  <p className='text-sm line-clamp-3'>Chúng tôi mong muốn phát triển một công cụ đo lường tác động để đơn giản hóa việc đo lường và báo cáo lượng carbon. Chúng tôi cũng đặt mục tiêu cho tất cả các nhà khai thác đều có kế hoạch phát triển bền vững vào năm 2030.</p>
+                </div>
+                <p className='text-sm text-[color:var(--primary-color)]'>Tìm hiểu thêm</p>
               </div>
             </Link>
             <Link href="" className='w-full rounded-2xl flex flex-col overflow-hidden border hover:drop-shadow'>
               <div className='bg-no-repeat bg-center bg-cover w-full pt-[65%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/848x404/oH1PRW.jpg")' }}></div>
               <div className='p-4 flex flex-1 flex-col justify-between'>
                 <div className='pb-3 flex flex-col gap-3'>
-                  <h5 className='capitalize font-bold'>Our Climate action plane</h5>
-                  <p className='text-sm'>We aim to develop an impact measurement tool to simplify carbon measurement and reporting.</p>
+                  <h5 className='capitalize font-bold'>Cuộc phiêu lưu riêng tư</h5>
+                  <p className='text-sm line-clamp-3'>Những cuộc phiêu lưu đặt sẵn, được cá nhân hóa</p>
                 </div>
-                <p className='text-sm text-[color:var(--primary-color)]'>Read more</p>
-              </div>
-            </Link>
-            <Link href="" className='w-full rounded-2xl flex flex-col overflow-hidden border hover:drop-shadow'>
-              <div className='bg-no-repeat bg-center bg-cover w-full pt-[65%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/848x404/oH1PRW.jpg")' }}></div>
-              <div className='p-4 flex flex-1 flex-col justify-between'>
-                <div className='pb-3 flex flex-col gap-3'>
-                  <h5 className='capitalize font-bold'>Our Climate action plane</h5>
-                  <p className='text-sm'>We aim to develop an impact measurement tool to simplify carbon measurement and reporting.</p>
-                </div>
-                <p className='text-sm text-[color:var(--primary-color)]'>Read more</p>
+                <p className='text-sm text-[color:var(--primary-color)]'>Tìm hiểu thêm</p>
               </div>
             </Link>
             <div className='gap-4 grid grid-rows-3'>
@@ -235,144 +300,190 @@ const Home = () => {
 
       <section className='my-8'>
         <div className='container'>
-          <h2 className='font-bold text-xl'>Diểm Đến Phổ Biến</h2>
-          <div className='grid-cols-1 md:grid-cols-2 grid gap-4 mt-6 justify-between'>
-            <div className=''>
-              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/europe-desktop.jpg")' }}>
-                <div className='absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
-                  <p className='text-lg font-bold'>Europe</p>
+          <h2 className='font-bold text-xl'>Điểm Đến Phổ Biến</h2>
+          <div className='flex gap-[2%] md:max-h-[506px] overflow-hidden flex-col mt-6 justify-between flex-wrap'>
+            <div className='w-full md:w-[48%] pb-5'>
+              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/europe-desktop.jpg")' }}>
+                <div className='absolute w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.15)]'></div>
+                <div className='z-20 absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
+                  <p className='text-white text-lg font-bold'>Europe</p>
                   <div className='flex gap-3'>
                     <Link href="" className='rounded-full px-3 py-1 border backdrop-opacity-30 backdrop-invert'>All Adventure</Link>
                     <Link href="" className='rounded-full px-3 py-1 border'>Deals</Link>
                   </div>
                 </div>
               </div>
-              <ul className='mt-3 flex-col gap-2 grid grid-cols-3'>
+              <ul className='mt-2 flex-col gap-2 grid grid-cols-3'>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Amalfi Coast</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Austria</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Croatia</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>England</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Finland</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Germany</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Iceland</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Ireland</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Italy</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Netherlands</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Norway</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Poland</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Portugal</Link>
                 </li>
               </ul>
             </div>
-            <div className=''>
-              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/europe-desktop.jpg")' }}>
-                <div className='absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
-                  <p className='text-lg font-bold'>Europe</p>
+            <div className='w-full md:w-[48%] pb-5'>
+              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/africa-desktop.jpg")' }}>
+                <div className='absolute w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.15)]'></div>
+                <div className='z-20 absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
+                  <p className='text-white text-lg font-bold'>Africa</p>
                   <div className='flex gap-3'>
                     <Link href="" className='rounded-full px-3 py-1 border backdrop-opacity-30 backdrop-invert'>All Adventure</Link>
                     <Link href="" className='rounded-full px-3 py-1 border'>Deals</Link>
                   </div>
                 </div>
               </div>
-              <ul className='mt-3 flex flex-col gap-2 grid grid-cols-3'>
+              <ul className='mt-2 flex-col gap-2 grid grid-cols-3'>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Egypt</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Kenya</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Morocco</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Namibia</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>South Africa</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Tanzania</Link>
                 </li>
               </ul>
             </div>
-            <div className=''>
-              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/europe-desktop.jpg")' }}>
-                <div className='absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
-                  <p className='text-lg font-bold'>Europe</p>
+            <div className='w-full md:w-[48%] pb-5'>
+              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/latin-america-desktop.jpg")' }}>
+                <div className='absolute w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.15)]'></div>
+                <div className='z-20 absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
+                  <p className='text-white text-lg font-bold'>Latin America</p>
                   <div className='flex gap-3'>
                     <Link href="" className='rounded-full px-3 py-1 border backdrop-opacity-30 backdrop-invert'>All Adventure</Link>
                     <Link href="" className='rounded-full px-3 py-1 border'>Deals</Link>
                   </div>
                 </div>
               </div>
-              <ul className='mt-3 flex-col gap-2 grid grid-cols-3'>
+              <ul className='mt-2 flex-col gap-2 grid grid-cols-3'>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Argentina</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Brazil</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Chile</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
-                </li>
-                <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Mexico</Link>
                 </li>
               </ul>
             </div>
-            <div className=''>
-              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/europe-desktop.jpg")' }}>
-                <div className='absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
-                  <p className='text-lg font-bold'>Europe</p>
+            <div className='w-full md:w-[48%] pb-5'>
+              <div className='bg-no-repeat bg-center bg-cover rounded-2xl w-full pt-[30%] md:pt-[15%] relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/images/seo-destination-links/asia-desktop.jpg")' }}>
+                <div className='absolute w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.15)]'></div>
+                <div className='z-20 absolute top-0 right-0 left-0 w-full h-full p-4 flex justify-between items-center text-white'>
+                  <p className='text-white text-lg font-bold'>Asia</p>
                   <div className='flex gap-3'>
                     <Link href="" className='rounded-full px-3 py-1 border backdrop-opacity-30 backdrop-invert'>All Adventure</Link>
                     <Link href="" className='rounded-full px-3 py-1 border'>Deals</Link>
                   </div>
                 </div>
               </div>
-              <ul className='mt-3 flex flex-col gap-2 grid grid-cols-3'>
+              <ul className='mt-2 flex-col gap-2 grid grid-cols-3'>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Việt Nam</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Bali</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Bhutan</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Cambodia</Link>
                 </li>
                 <li>
-                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>France</Link>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>China</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Georgia</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Holu Land</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>India</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Indonesia</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Georgia</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Japan</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Jordan</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Thailand</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Malaysia</Link>
+                </li>
+                <li>
+                  <Link href="" className='hover:text-[color:var(--primary-color)] hover:underline'>Myanmar</Link>
                 </li>
               </ul>
             </div>
+
           </div>
         </div>
       </section>
 
       <section className='my-8'>
         <div className='container'>
-          <h2 className='font-bold text-2xl'>Best destinations for every season</h2>
+          <h2 className='font-bold text-2xl'>Những điểm đến tốt nhất cho mỗi mùa</h2>
           <div className='mt-4'>
-            <p className='mb-4 font-bold'>Tours departing in winter (December, January, February)</p>
+            <p className='mb-4 font-bold flex items-center gap-4'>
+              <BsFillSunFill color="red" size="32" />
+              Tour khởi hành vào mùa đông (Tháng 12, Tháng 1, Tháng 2)</p>
             <div className='grid grid-cols-2 md:grid-cols-5 gap-4'>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
@@ -384,34 +495,34 @@ const Home = () => {
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/RdCdKI.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Nile cruises in December</p>
                 </div>
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/CkXcKF.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Vietnam in January</p>
                 </div>
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/TAuWHN.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>New Zealand in January</p>
                 </div>
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/7UhHa2.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Antarctica/South Pole in January</p>
                 </div>
               </Link>
             </div>
@@ -419,46 +530,48 @@ const Home = () => {
 
 
           <div className='mt-4'>
-            <p className='mb-4 font-bold'>Tours departing in spring (March, April, May)</p>
+            <p className='mb-4 font-bold flex items-center gap-4'>
+              <BsFillSunFill color="red" size="32" />
+              Tour khởi hành vào mùa xuân (Tháng 3, Tháng 4, Tháng 5)</p>
             <div className='grid grid-cols-2 md:grid-cols-5 gap-4'>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/NUnnV3.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Iceland in March</p>
                 </div>
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/TzJbhr.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Japan in April</p>
                 </div>
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/QBYIAA.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Sicily in April</p>
                 </div>
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/JyRid6.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Peru in May</p>
                 </div>
               </Link>
               <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
                 <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
+                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/2wSkq8.jpg")' }}></div>
                 </div>
                 <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
+                  <p className='text-[15px]'>Greence in May</p>
                 </div>
               </Link>
             </div>
@@ -468,122 +581,24 @@ const Home = () => {
 
       <section className="my-8">
         <div className="container">
-          <h2 className='font-bold text-2xl'>Adventures For Everyone</h2>
+          <h2 className='font-bold text-2xl'>Phiêu lưu dành cho mọi lứa tuổi</h2>
           <div className='mt-6 grid grid-cols-2 md:grid-cols-4 gap-6'>
             <Link href="" className='w-full'>
               <div className='w-full bg-no-repeat bg-center bg-cover pt-[100%] rounded' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/1040x812/6C8RqH.jpg")' }}></div>
-              <p className='mt-4 font-bold text-lg'>Families</p>
+              <p className='mt-4 font-bold text-lg'>Các gia đình</p>
             </Link>
             <Link href="" className='w-full'>
-              <div className='w-full bg-no-repeat bg-center bg-cover pt-[100%] rounded' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/1040x812/6C8RqH.jpg")' }}></div>
-              <p className='mt-4 font-bold text-lg'>Families</p>
+              <div className='w-full bg-no-repeat bg-center bg-cover pt-[100%] rounded' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/1040x812/oBNTtw.jpg")' }}></div>
+              <p className='mt-4 font-bold text-lg'>Cặp đôi</p>
             </Link>
             <Link href="" className='w-full'>
-              <div className='w-full bg-no-repeat bg-center bg-cover pt-[100%] rounded' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/1040x812/6C8RqH.jpg")' }}></div>
-              <p className='mt-4 font-bold text-lg'>Families</p>
+              <div className='w-full bg-no-repeat bg-center bg-cover pt-[100%] rounded' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/1040x812/ZBGiRY.jpg")' }}></div>
+              <p className='mt-4 font-bold text-lg'>Người lớn tuổi</p>
             </Link>
             <Link href="" className='w-full'>
-              <div className='w-full bg-no-repeat bg-center bg-cover pt-[100%] rounded' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/1040x812/6C8RqH.jpg")' }}></div>
-              <p className='mt-4 font-bold text-lg'>Families</p>
+              <div className='w-full bg-no-repeat bg-center bg-cover pt-[100%] rounded' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/1040x812/Hnc8Zp.jpg")' }}></div>
+              <p className='mt-4 font-bold text-lg'>Thanh niên</p>
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className='my-8'>
-        <div className='container'>
-          <h2 className='font-bold text-2xl'>Adventures All Around The World</h2>
-          <div className='mt-4'>
-            <p className='mb-4 font-medium'>Hiking & Trekking</p>
-            <div className='grid grid-cols-2 md:grid-cols-5 gap-4'>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-            </div>
-          </div>
-
-
-          <div className='mt-4'>
-            <p className='mb-4 font-medium'>River Cruises</p>
-            <div className='grid grid-cols-2 md:grid-cols-5 gap-4'>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-              <Link href="" className='flex gap-4 drop-shadow hover:drop-shadow-2xl rounded-xl p-1 w-full border'>
-                <div className='w-1/4 rounded-xl overflow-hidden'>
-                  <div className='bg-no-repeat bg-cover bg-center w-full pt-[100%]' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/content-pages/391/120x120/XFjQLs.jpg")' }}></div>
-                </div>
-                <div className='flex-1 flex items-center'>
-                  <p className='text-[15px]'>Europe in December</p>
-                </div>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -591,11 +606,11 @@ const Home = () => {
       {/* support */}
       <section className="my-8">
         <div className="container">
-          <h2 className='font-bold text-2xl'>24/7 Customer Support</h2>
+          <h2 className='font-bold text-2xl'>Chăm sóc khách hàng 24/7</h2>
           <div className="mt-6 flex flex-col md:flex-row gap-12">
             <div className="w-full md:w-2/3">
-              <p className="text-sm">Our team of experienced adventure specialists have travelled to hundreds of countries around the globe and have decades of first-hand travel experience to share. Contact us now to have all of your advnture-related questions answered!</p>
-              <button className='mt-4 py-3 px-20 rounded bg-[color:var(--primary-color)] font-medium text-white'>Contact Us</button>
+              <p className="text-sm">Đội ngũ chuyên gia phiêu lưu giàu kinh nghiệm của chúng tôi đã đi đến hàng trăm quốc gia trên toàn cầu và có hàng chục năm kinh nghiệm du lịch trực tiếp để chia sẻ. Hãy liên hệ ngay với chúng tôi để được giải đáp mọi thắc mắc liên quan đến quảng cáo của bạn!</p>
+              <button className='mt-4 py-3 px-20 rounded bg-[color:var(--primary-color)] font-medium text-white'>Liên hệ chúng tôi</button>
             </div>
             <div className="flex-1 flex justify-center md:justify-end">
               <div className='mr-[-4%] z-30'>
@@ -615,39 +630,39 @@ const Home = () => {
       <section className="my-8 bg-[#2C3E50] py-8">
         <div className="container">
           <div className="uppercase text-white text-center">
-            <h2 className="text-lg">Day to come</h2>
-            <p className="text-sm">a travel magazine by itourgo</p>
+            <h2 className="text-lg">Những ngày tiếp theo</h2>
+            <p className="text-sm">Tạp chí du lịch itourgo</p>
           </div>
           <div className="mt-6 grid grid-cols-1 md:grid-cols-4 gap-8">
             <Link href="" className="w-full">
-              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2023/11/HERO-NamburgNationalParkPinnacles.-Photodigitaal.nl_Shutterstock-2048x1365.jpg")' }}>
+              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2017/09/HEROunknown-location-shutterstock_2124196307-2048x1259.jpg")' }}>
                 <div className='absolute bottom-[0%] text-white p-4'>
-                  <h6 className='text-lg font-medium'>The Best Four-Week Travel Itineraries in Australia</h6>
+                  <h6 className='text-lg font-medium'>Điểm đến tốt nhất cho du khách khuyết tật</h6>
                   <p className='text-sm'>Randi Gollin</p>
                 </div>
               </div>
             </Link>
             <Link href="" className="w-full">
-              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2023/11/HERO-NamburgNationalParkPinnacles.-Photodigitaal.nl_Shutterstock-2048x1365.jpg")' }}>
+              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2018/07/RS11371_shutterstock_Switzerland_Zermatt_704449474-1-2048x1365.jpg")' }}>
                 <div className='absolute bottom-[0%] text-white p-4'>
-                  <h6 className='text-lg font-medium'>The Best Four-Week Travel Itineraries in Australia</h6>
-                  <p className='text-sm'>Randi Gollin</p>
+                  <h6 className='text-lg font-medium'>Bảy chuyến tàu ngắm cảnh đẹp nhất ở châu Âu</h6>
+                  <p className='text-sm'>Shandana A. Durrani</p>
                 </div>
               </div>
             </Link>
             <Link href="" className="w-full">
-              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2023/11/HERO-NamburgNationalParkPinnacles.-Photodigitaal.nl_Shutterstock-2048x1365.jpg")' }}>
+              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2023/12/HEROAlaskaUSA.NanditaDamaraju_Unsplash-2048x1367.jpg")' }}>
                 <div className='absolute bottom-[0%] text-white p-4'>
-                  <h6 className='text-lg font-medium'>The Best Four-Week Travel Itineraries in Australia</h6>
-                  <p className='text-sm'>Randi Gollin</p>
+                  <h6 className='text-lg font-medium'>Nơi để xem cực quang vào tháng 2</h6>
+                  <p className='text-sm'>Anna Hann</p>
                 </div>
               </div>
             </Link>
             <Link href="" className="w-full">
-              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2023/11/HERO-NamburgNationalParkPinnacles.-Photodigitaal.nl_Shutterstock-2048x1365.jpg")' }}>
+              <div className="w-full rounded-lg bg-no-repeat bg-center bg-cover pt-[100%] relative" style={{ backgroundImage: 'url("https://www.tourradar.com/days-to-come/wp-content/uploads/2023/12/HEROTanzania.Delbars_Shutterstock-2048x1365.jpg")' }}>
                 <div className='absolute bottom-[0%] text-white p-4'>
-                  <h6 className='text-lg font-medium'>The Best Four-Week Travel Itineraries in Australia</h6>
-                  <p className='text-sm'>Randi Gollin</p>
+                  <h6 className='text-lg font-medium'>Điểm đến Safari tốt nhất ở Châu Phi</h6>
+                  <p className='text-sm'>Shandana A. Durrani</p>
                 </div>
               </div>
             </Link>
@@ -659,7 +674,7 @@ const Home = () => {
       <section className="my-8">
         <div className="container">
           <h2 className="font-bold text-2xl">
-            Top Operators
+            Đối tác hàng đầu
           </h2>
           <div className="mt-6 grid gird-cols-1 md:grid-cols-3 gap-6">
             <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
@@ -683,10 +698,10 @@ const Home = () => {
             </Link>
             <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
-                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Contiki-5d79.png" alt="" />
+                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/G_Adventures-bde9.png" alt="" />
               </div>
               <div className="flex flex-col justify-between">
-                <h5>Contiki</h5>
+                <h5>G Adventures</h5>
                 <div className="flex gap-3 items-center text-sm">
                   <span className="text-orange-500">4.7</span>
                   <i className='flex text-orange-500'>
@@ -702,10 +717,10 @@ const Home = () => {
             </Link>
             <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
-                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Contiki-5d79.png" alt="" />
+                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/trafalgar-64e8.png" alt="" />
               </div>
               <div className="flex flex-col justify-between">
-                <h5>Contiki</h5>
+                <h5>Trafalgar</h5>
                 <div className="flex gap-3 items-center text-sm">
                   <span className="text-orange-500">4.7</span>
                   <i className='flex text-orange-500'>
@@ -721,10 +736,10 @@ const Home = () => {
             </Link>
             <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
-                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Contiki-5d79.png" alt="" />
+                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Globus-2607.png" alt="" />
               </div>
               <div className="flex flex-col justify-between">
-                <h5>Contiki</h5>
+                <h5>Globus</h5>
                 <div className="flex gap-3 items-center text-sm">
                   <span className="text-orange-500">4.7</span>
                   <i className='flex text-orange-500'>
@@ -740,10 +755,10 @@ const Home = () => {
             </Link>
             <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
-                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Contiki-5d79.png" alt="" />
+                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Topdeck-81a1.png" alt="" />
               </div>
               <div className="flex flex-col justify-between">
-                <h5>Contiki</h5>
+                <h5>Topdeck</h5>
                 <div className="flex gap-3 items-center text-sm">
                   <span className="text-orange-500">4.7</span>
                   <i className='flex text-orange-500'>
@@ -759,10 +774,10 @@ const Home = () => {
             </Link>
             <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
-                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Contiki-5d79.png" alt="" />
+                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/collette-vacations-4e29.png" alt="" />
               </div>
               <div className="flex flex-col justify-between">
-                <h5>Contiki</h5>
+                <h5>Collectte</h5>
                 <div className="flex gap-3 items-center text-sm">
                   <span className="text-orange-500">4.7</span>
                   <i className='flex text-orange-500'>
@@ -778,10 +793,10 @@ const Home = () => {
             </Link>
             <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
-                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Contiki-5d79.png" alt="" />
+                <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Cosmos-0f3d.png" alt="" />
               </div>
               <div className="flex flex-col justify-between">
-                <h5>Contiki</h5>
+                <h5>Cosmos</h5>
                 <div className="flex gap-3 items-center text-sm">
                   <span className="text-orange-500">4.7</span>
                   <i className='flex text-orange-500'>
@@ -806,64 +821,64 @@ const Home = () => {
         <div className="container">
           <h2 className='font-bold text-2xl'>Recommended Destinations</h2>
           <div className='mt-6 grid grid-cols-2 md:grid-cols-6 gap-5'>
-            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/1514_YauXU7ae.jpg")' }}>
+            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/2583_bijswBKK.jpg")' }}>
               <div className="absolute z-10 left-0 top-0 h-full w-full flex items-center justify-center">
                 <div className="text-white flex flex-col gap-2 text-center">
-                  <h5 className="text-xl font-bold">Croatia</h5>
+                  <h5 className="text-xl font-bold">Italy</h5>
                   <p className="text-sm">600 tour</p>
                 </div>
               </div>
               <div className="absolute left-0 top-0 w-full h-full bg-[color:rgba(0,0,0,0.25)]"></div>
             </Link>
-            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/1514_YauXU7ae.jpg")' }}>
+            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/230_8iHJe7dn.jpg")' }}>
               <div className="absolute z-10 left-0 top-0 h-full w-full flex items-center justify-center">
                 <div className="text-white flex flex-col gap-2 text-center">
-                  <h5 className="text-xl font-bold">Croatia</h5>
+                  <h5 className="text-xl font-bold">Europe </h5>
                   <p className="text-sm">600 tour</p>
                 </div>
               </div>
               <div className="absolute left-0 top-0 w-full h-full bg-[color:rgba(0,0,0,0.25)]"></div>
             </Link>
-            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/1514_YauXU7ae.jpg")' }}>
+            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/75_RCUhrKb3.jpg")' }}>
               <div className="absolute z-10 left-0 top-0 h-full w-full flex items-center justify-center">
                 <div className="text-white flex flex-col gap-2 text-center">
-                  <h5 className="text-xl font-bold">Croatia</h5>
+                  <h5 className="text-xl font-bold">Asia</h5>
                   <p className="text-sm">600 tour</p>
                 </div>
               </div>
               <div className="absolute left-0 top-0 w-full h-full bg-[color:rgba(0,0,0,0.25)]"></div>
             </Link>
-            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/1514_YauXU7ae.jpg")' }}>
+            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/2358_dP5Y2seR.jpg")' }}>
               <div className="absolute z-10 left-0 top-0 h-full w-full flex items-center justify-center">
                 <div className="text-white flex flex-col gap-2 text-center">
-                  <h5 className="text-xl font-bold">Croatia</h5>
+                  <h5 className="text-xl font-bold">Iceland</h5>
                   <p className="text-sm">600 tour</p>
                 </div>
               </div>
               <div className="absolute left-0 top-0 w-full h-full bg-[color:rgba(0,0,0,0.25)]"></div>
             </Link>
-            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/1514_YauXU7ae.jpg")' }}>
+            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/2398_BKrVtAjW.jpg")' }}>
               <div className="absolute z-10 left-0 top-0 h-full w-full flex items-center justify-center">
                 <div className="text-white flex flex-col gap-2 text-center">
-                  <h5 className="text-xl font-bold">Croatia</h5>
+                  <h5 className="text-xl font-bold">India</h5>
                   <p className="text-sm">600 tour</p>
                 </div>
               </div>
               <div className="absolute left-0 top-0 w-full h-full bg-[color:rgba(0,0,0,0.25)]"></div>
             </Link>
-            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/1514_YauXU7ae.jpg")' }}>
+            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/209328_QgZR4Ev9.jpg")' }}>
               <div className="absolute z-10 left-0 top-0 h-full w-full flex items-center justify-center">
                 <div className="text-white flex flex-col gap-2 text-center">
-                  <h5 className="text-xl font-bold">Croatia</h5>
+                  <h5 className="text-xl font-bold">Amalfi Coast</h5>
                   <p className="text-sm">600 tour</p>
                 </div>
               </div>
               <div className="absolute left-0 top-0 w-full h-full bg-[color:rgba(0,0,0,0.25)]"></div>
             </Link>
-            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/1514_YauXU7ae.jpg")' }}>
+            <Link href="" className='w-full rounded-lg pt-[100%] bg-no-repeat bg-center bg-cover relative overflow-hidden' style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/serp/1436x180/162_s4fB4Hnm.jpg")' }}>
               <div className="absolute z-10 left-0 top-0 h-full w-full flex items-center justify-center">
                 <div className="text-white flex flex-col gap-2 text-center">
-                  <h5 className="text-xl font-bold">Croatia</h5>
+                  <h5 className="text-xl font-bold">Australia</h5>
                   <p className="text-sm">600 tour</p>
                 </div>
               </div>
@@ -878,15 +893,15 @@ const Home = () => {
           <h2 className="font-bold text-2xl">Featured Adventures</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 mt-6 gap-8">
             <Link href="" className="w-full rounded-lg border p-4 flex flex-col drop-shadow">
-              <p className='line-clamp-1 font-medium mb-2'>Best of Bulgaria Roundtrip</p>
+              <p className='line-clamp-1 font-medium mb-2'>Oktoberfest Munich (3-Star Hotel S)</p>
               <p className='line-clamp-1 text-sm'>8 days from $648</p>
             </Link>
             <Link href="" className="w-full rounded-lg border p-4 flex flex-col drop-shadow">
-              <p className='line-clamp-1 font-medium mb-2'>Best of Bulgaria Roundtrip</p>
+              <p className='line-clamp-1 font-medium mb-2'>Peru Tailored (Nazca Lines, Inca Trai)</p>
               <p className='line-clamp-1 text-sm'>8 days from $648</p>
             </Link>
             <Link href="" className="w-full rounded-lg border p-4 flex flex-col drop-shadow">
-              <p className='line-clamp-1 font-medium mb-2'>Best of Bulgaria Roundtrip</p>
+              <p className='line-clamp-1 font-medium mb-2'>Christian Israel & Petra, 9 Days</p>
               <p className='line-clamp-1 text-sm'>8 days from $648</p>
             </Link>
             <Link href="" className="w-full rounded-lg border p-4 flex flex-col drop-shadow">
@@ -900,15 +915,15 @@ const Home = () => {
       <section className="my-8 bg-[#2C3E50] py-12">
         <div className="container flex flex-col md:flex-row justify-between gap-4">
           <div className="w-full md:w-2/5 flex flex-col justify-between text-white">
-            <h2 className="text-2xl">Sign up for Our Newsletter</h2>
-            <p className="text-sm">Save up to 50% on tours! Get exclusive access to members only deals by email.</p>
+            <h2 className="text-2xl">Đăng ký nhận thông báo của chúng tôi</h2>
+            <p className="text-sm">Tiết kiệm tới 50% cho các chuyến tham quan! Nhận quyền truy cập độc quyền vào các giao dịch chỉ dành cho thành viên qua email.</p>
           </div>
           <div className="">
             <div className="w-full flex rounded h-12 overflow-hidden">
-              <input placeholder="ex: example@gmail.com" className='w-[80%] h-full border-none  border-l border-r focus-input-none' type="text" />
-              <button className='h-full px-3 md:px-12 bg-[color:var(--primary-color)] text-white font-medium'>Subscribe</button>
+              <input placeholder="ex: example@gmail.com" className='flex-1 h-full border-none  border-l border-r focus-input-none' type="text" />
+              <button className='h-full px-3 md:px-12 bg-[color:var(--primary-color)] text-white font-medium'>Đăng ký</button>
             </div>
-            <p className='text-sm text-white mt-6'>By submitting this form, I agree to the TourRadar T&Cs and Privacy policy.</p>
+            <p className='text-sm text-white mt-6'>Bằng cách gửi biểu mẫu này, tôi đồng ý với Chính sách quyền riêng tư và Điều khoản của ItourGo</p>
           </div>
         </div>
       </section>

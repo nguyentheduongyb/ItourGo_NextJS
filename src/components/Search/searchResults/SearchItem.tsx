@@ -15,15 +15,16 @@ export interface SearchItemProps {
         reviews: number,
         duration: number,
         ranks: string[],
+        slug: string,
 }
 
 
-export const SearchItem: React.FC<SearchItemProps> = ({ categories, name, description, image, price, sale, stars, reviews, duration, ranks }: SearchItemProps) => {
+export const SearchItem: React.FC<SearchItemProps> = ({ categories, name, description, image, price, sale, stars, reviews, duration, ranks, slug }: SearchItemProps) => {
         return (
                 <div className="w-full rounded-lg border drop-shadow p-2 bg-white flex md:flex-row flex-col gap-6">
                         <div className="w-full md:w-1/4 flex flex-col gap-2">
                                 <div className="rounded-xl w-full pt-[50%] md:pt-[74%] bg-center bg-no-repeat bg-cover" style={{ backgroundImage: 'url("https://cdn1.ivivu.com/iVivu/2022/06/30/12/hinhdaidien-374x280.webp?o=jpg")' }}></div>
-                                <div className="rounded-xl w-full pt-[50%] bg-center bg-no-repeat bg-cover hidden md:block" style={{ backgroundImage: 'url("https://cdn1.ivivu.com/iVivu/2022/06/30/12/hinhdaidien-374x280.webp?o=jpg")' }}></div>
+                                <div className="rounded-xl w-full pt-[50%] bg-center bg-no-repeat bg-cover hidden md:block" style={{ backgroundImage: 'url("https://cdn.tourradar.com/s3/map/232x112/125892_ccf9.png")' }}></div>
                         </div>
                         <div className="flex-1">
                                 <div className="w-full flex justify-between">
@@ -37,7 +38,7 @@ export const SearchItem: React.FC<SearchItemProps> = ({ categories, name, descri
                                 </div>
                                 <div className='w-full flex md:flex-row flex-col gap-4 md:gap-8 mt-2 px-3 md:px-0'>
                                         <div className="flex-1">
-                                                <Link href="/tour/aaa" className='w-full text-xl font-bold hover:underline line-clamp-1 md:line-clamp-2'>{name}</Link>
+                                                <Link href={`/tour/${slug}`} className='w-full text-xl font-bold hover:underline line-clamp-1 md:line-clamp-2'>{name}</Link>
                                                 <div className="w-full flex items-center text-sm mt-1">
                                                         <span>{stars}</span>
                                                         <FaStar color="yellow" />
