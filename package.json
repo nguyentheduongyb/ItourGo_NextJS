@@ -20,6 +20,7 @@
     "flowbite-react": "^0.7.0",
     "multi-range-slider-react": "^2.0.7",
     "next": "13.4.13",
+    "next-auth": "^4.24.5",
     "postcss": "8.4.27",
     "qs": "^6.11.2",
     "react": "18.2.0",

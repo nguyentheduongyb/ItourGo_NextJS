@@ -4,13 +4,14 @@ import '~/styles/globals.css'
 
 
 import type { Metadata } from 'next'
+import { NextAuthProvider } from './Provider'
 
 export const metadata: Metadata = {
   title: 'ItourGo',
   description: "Website booking"
 }
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode
 }) {
@@ -18,10 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-
-        {children}
-        <Footer />
+        <NextAuthProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextAuthProvider>
       </body>
     </html>
   )

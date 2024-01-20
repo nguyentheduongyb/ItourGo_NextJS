@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 
-import { Wrapper as PopperWrapper } from '~/Components/Page/Popper';
-import MenuItem from './MenuItem';
+import { Wrapper as PopperWrapper } from '~/components/popper';
+import MenuItem from './MenuItem.tsx';
 import Header from './Header';
 import { useState } from 'react';
 const defaultFn = () => { };
 
-function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }: any) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
     const renderItems = () => {
-        return current.data.map((item, index) => {
+        return current.data.map((item: any, index: number) => {
             const isParent = !!item.children;
 
             return (
@@ -35,7 +35,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         setHistory((prev) => prev.slice(0, prev.length - 1));
     };
 
-    const renderResult = (attrs) => (
+    const renderResult = (attrs: any) => (
         <div className="w-[220px] bg-white text-black rounded-[8px] shadow-lg" tabIndex="-1" {...attrs}>
             <PopperWrapper className="py-2">
                 {history.length > 1 && <Header title={current.title} onBack={handleBack} />}

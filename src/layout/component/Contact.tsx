@@ -1,8 +1,6 @@
-'use client'
 import Link from "next/link";
-import Tippy from "@tippyjs/react/headless";
 
-import { MdNotifications, MdLanguage, MdLocationOn } from "react-icons/md"
+import { MdLanguage, MdLocationOn } from "react-icons/md"
 
 import { FaUser, FaSignOutAlt, FaUserCircle } from "react-icons/fa"
 import { IoMdWallet, IoIosSettings } from "react-icons/io"

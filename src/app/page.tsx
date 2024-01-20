@@ -1,26 +1,12 @@
 'use client'
-import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BsFillSunFill } from 'react-icons/bs';
 import { FaStar } from "react-icons/fa"
-import { MdCelebration } from 'react-icons/md';
-import API from '~/API';
 
 
 const Home = () => {
   const [data, setData] = useState<any[]>([1, 2, 3, 4, 5])
-  // useEffect(() => {
-  //   API.get("api/tour")
-  //     .then((response) => {
-  //       console.log(response);
-
-  //       setData([1, 2, 3])
-  //     })
-  //     .catch((error) => {
-  //       throw new Error(error)
-  //     })
-  // }, [])
   return (
     <div>
       <section className='my-8'>
@@ -88,38 +74,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section className='my-8'>
-        <div className="container">
-          <h1 className="text-2xl font-medium uppercase mb-6 text-center">Các tour nổi bật trong tháng</h1>
-          <div className='grid grid-cols-1 md:grid-cols-5 gap-6'>
-            {data.map((item, index): any => (
-              <Link key={index} href={`/tour/${item.slug}`} className='block bg-white overflow-hidden'>
-                <div className='w-full'>
-                  <img className='w-full object-cover  rounded-xl' src="https://cdn.tourradar.com/s3/tour/360x210/70596_f3501d.jpg" alt="" />
-                </div>
-                <div className='flex-1 flex flex-col justify-between md:py-1'>
-                  <div className='space-y-2'>
-                    <h6 className='font-medium line-clamp-1 capitalize'>{item.name}</h6>
-                    <p className='flex gap-2 text-xs items-center'>
-                      <span>{item.period}</span>
-                      <span>{item.rate}</span>
-                      <FaStar color="yellow" />
-                      <span className="text-gray-400">(48)</span>
-                    </p>
-                    <p className='flex items-center gap-1'>
-                      <span>From</span>
-                      <span className='line-through'>${item.expectedCost}</span>
-                      <span className='text-red-500 ml-auto'>${item.expectedCost}</span>
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            )
-            )}
-
-          </div>
-        </div>
-      </section> */}
 
       <section className='my-8'>
         <p className="text-2xl font-medium uppercase mb-6 text-center">Các tour nổi bật trong tháng</p>
@@ -224,7 +178,7 @@ const Home = () => {
               <p className="text-sm">Với dịch vụ chăm sóc khách hàng 24/7, điều kiện đặt chỗ linh hoạt và các lựa chọn bảo hiểm phong phú, chúng tôi luôn sẵn sàng hỗ trợ bạn khi kế hoạch thay đổi. <Link className='text-[var(--primary-color)]' href="">Tùy chọn của tôi</Link></p>
             </div>
             <div className="w-40 h-[120px] bg-center bg-contain bg-no-repeat" style={{
-              backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='73' height='104' fill='none'%3E%3Cg clip-path='url(%23clip0_2205:13720)'%3E%3Cpath fill='%230A7BBD' d='M46 59l-9 9.5-.5.5-7.5-8c-3.33-2-9.3-7.5-6.5-13.5 2.8-6 8.17-4.83 10.5-3.5l3.5 3 4-3c1.67-1 5.9-1.9 9.5 2.5 3.6 4.4-1.17 10.17-4 12.5z' opacity='.3'/%3E%3Cpath fill='%232C3E50' fill-rule='evenodd' d='M43.86 44.29a5.89 5.89 0 00-4.18 1.74l-2.07 2.08c-.6.6-1.56.6-2.16 0l-2.08-2.08a5.7 5.7 0 00-1.5-1.11 5.95 5.95 0 00-6.86 9.5l.03.04L36.5 66.6h.03l11.49-12.15.03-.04a5.89 5.89 0 001.11-6.82v-.03a5.4 5.4 0 00-1.1-1.52l-.02-.02a5.9 5.9 0 00-4.18-1.74zm-3.43-2.36a8.93 8.93 0 0111.46 4.3 8.95 8.95 0 01-1.68 10.34L38.7 68.75a3.07 3.07 0 01-4.37 0L22.85 56.56a8.94 8.94 0 01-1.67-10.35 9.01 9.01 0 0112.04-4.03c.87.44 1.65 1 2.32 1.7l.99.99.99-1a8.95 8.95 0 012.9-1.95z' clipRule='evenodd'/%3E%3Cpath fill='%232C3E50' fill-rule='evenodd' d='M6.82 27.09a78.69 78.69 0 0159.36 0h.02a6.15 6.15 0 013.76 5.68v23.3a39.1 39.1 0 01-26.01 36.38l-3.39 1.24c-2.62.99-5.5.99-8.12 0l-3.39-1.24a38.97 38.97 0 01-26-36.38V32.76A6.17 6.17 0 016.8 27.1l.02-.01zm-.74 5.68v23.28a36.05 36.05 0 0023.99 33.53h.02l3.42 1.26c1.93.72 4.05.72 5.99 0l3.43-1.26a35.93 35.93 0 0023.99-33.53V32.77a3.11 3.11 0 00-1.9-2.86 75.65 75.65 0 00-57.05 0 3.1 3.1 0 00-1.89 2.86z' clipRule='evenodd'/%3E%3Cpath fill='%232C3E50' d='M13.69 15.6H1.52A1.52 1.52 0 01.45 13c.28-.28.67-.45 1.07-.45H13.7a1.52 1.52 0 011.07 2.6c-.28.3-.67.45-1.07.45z'/%3E%3Cpath fill='%232C3E50' d='M7.6 21.7a1.52 1.52 0 01-1.52-1.52V7.98a1.53 1.53 0 012.6-1.07c.28.28.44.67.44 1.07v12.2A1.53 1.53 0 017.6 21.7zm63.88 76.2H59.31a1.52 1.52 0 01-1.07-2.6c.28-.28.67-.44 1.07-.44h12.17a1.52 1.52 0 011.07 2.6c-.28.28-.67.44-1.07.44z'/%3E%3Cpath fill='%232C3E50' d='M65.4 104a1.52 1.52 0 01-1.53-1.53V90.28a1.53 1.53 0 012.6-1.08c.29.29.45.68.45 1.08v12.2A1.53 1.53 0 0165.4 104zM28.96 7.62h-9.13a1.52 1.52 0 01-1.07-2.6c.28-.29.67-.45 1.07-.45h9.13a1.52 1.52 0 011.07 2.6c-.28.3-.67.45-1.07.45z'/%3E%3Cpath fill='%232C3E50' d='M24.33 12.2a1.52 1.52 0 01-1.52-1.53V1.52a1.53 1.53 0 012.6-1.07c.28.28.44.67.44 1.07v9.15a1.53 1.53 0 01-1.52 1.52z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2205:13720'%3E%3Cpath fill='%23fff' d='M0 0h73v104H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")`
+              backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='73' height='104' fill='none'%3E%3Cg clipPath='url(%23clip0_2205:13720)'%3E%3Cpath fill='%230A7BBD' d='M46 59l-9 9.5-.5.5-7.5-8c-3.33-2-9.3-7.5-6.5-13.5 2.8-6 8.17-4.83 10.5-3.5l3.5 3 4-3c1.67-1 5.9-1.9 9.5 2.5 3.6 4.4-1.17 10.17-4 12.5z' opacity='.3'/%3E%3Cpath fill='%232C3E50' fillRule='evenodd' d='M43.86 44.29a5.89 5.89 0 00-4.18 1.74l-2.07 2.08c-.6.6-1.56.6-2.16 0l-2.08-2.08a5.7 5.7 0 00-1.5-1.11 5.95 5.95 0 00-6.86 9.5l.03.04L36.5 66.6h.03l11.49-12.15.03-.04a5.89 5.89 0 001.11-6.82v-.03a5.4 5.4 0 00-1.1-1.52l-.02-.02a5.9 5.9 0 00-4.18-1.74zm-3.43-2.36a8.93 8.93 0 0111.46 4.3 8.95 8.95 0 01-1.68 10.34L38.7 68.75a3.07 3.07 0 01-4.37 0L22.85 56.56a8.94 8.94 0 01-1.67-10.35 9.01 9.01 0 0112.04-4.03c.87.44 1.65 1 2.32 1.7l.99.99.99-1a8.95 8.95 0 012.9-1.95z' clipRule='evenodd'/%3E%3Cpath fill='%232C3E50' fillRule='evenodd' d='M6.82 27.09a78.69 78.69 0 0159.36 0h.02a6.15 6.15 0 013.76 5.68v23.3a39.1 39.1 0 01-26.01 36.38l-3.39 1.24c-2.62.99-5.5.99-8.12 0l-3.39-1.24a38.97 38.97 0 01-26-36.38V32.76A6.17 6.17 0 016.8 27.1l.02-.01zm-.74 5.68v23.28a36.05 36.05 0 0023.99 33.53h.02l3.42 1.26c1.93.72 4.05.72 5.99 0l3.43-1.26a35.93 35.93 0 0023.99-33.53V32.77a3.11 3.11 0 00-1.9-2.86 75.65 75.65 0 00-57.05 0 3.1 3.1 0 00-1.89 2.86z' clipRule='evenodd'/%3E%3Cpath fill='%232C3E50' d='M13.69 15.6H1.52A1.52 1.52 0 01.45 13c.28-.28.67-.45 1.07-.45H13.7a1.52 1.52 0 011.07 2.6c-.28.3-.67.45-1.07.45z'/%3E%3Cpath fill='%232C3E50' d='M7.6 21.7a1.52 1.52 0 01-1.52-1.52V7.98a1.53 1.53 0 012.6-1.07c.28.28.44.67.44 1.07v12.2A1.53 1.53 0 017.6 21.7zm63.88 76.2H59.31a1.52 1.52 0 01-1.07-2.6c.28-.28.67-.44 1.07-.44h12.17a1.52 1.52 0 011.07 2.6c-.28.28-.67.44-1.07.44z'/%3E%3Cpath fill='%232C3E50' d='M65.4 104a1.52 1.52 0 01-1.53-1.53V90.28a1.53 1.53 0 012.6-1.08c.29.29.45.68.45 1.08v12.2A1.53 1.53 0 0165.4 104zM28.96 7.62h-9.13a1.52 1.52 0 01-1.07-2.6c.28-.29.67-.45 1.07-.45h9.13a1.52 1.52 0 011.07 2.6c-.28.3-.67.45-1.07.45z'/%3E%3Cpath fill='%232C3E50' d='M24.33 12.2a1.52 1.52 0 01-1.52-1.53V1.52a1.53 1.53 0 012.6-1.07c.28.28.44.67.44 1.07v9.15a1.53 1.53 0 01-1.52 1.52z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2205:13720'%3E%3Cpath fill='%23fff' d='M0 0h73v104H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E")`
             }}></div>
           </div>
         </div>
@@ -677,7 +631,7 @@ const Home = () => {
             Đối tác hàng đầu
           </h2>
           <div className="mt-6 grid gird-cols-1 md:grid-cols-3 gap-6">
-            <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
+            <Link href="/agency/aaa" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
                 <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Contiki-5d79.png" alt="" />
               </div>
@@ -696,7 +650,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-            <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
+            <Link href="/agency/aaa" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
                 <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/G_Adventures-bde9.png" alt="" />
               </div>
@@ -715,7 +669,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-            <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
+            <Link href="/agency/aaa" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
                 <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/trafalgar-64e8.png" alt="" />
               </div>
@@ -734,7 +688,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-            <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
+            <Link href="/agency/aaa" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
                 <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Globus-2607.png" alt="" />
               </div>
@@ -753,7 +707,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-            <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
+            <Link href="/agency/aaa" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
                 <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Topdeck-81a1.png" alt="" />
               </div>
@@ -772,7 +726,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-            <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
+            <Link href="/agency/aaa" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
                 <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/collette-vacations-4e29.png" alt="" />
               </div>
@@ -791,7 +745,7 @@ const Home = () => {
                 </div>
               </div>
             </Link>
-            <Link href="" className="w-full rounded-lg border flex p-4 gap-4 items-center">
+            <Link href="/agency/aaa" className="w-full rounded-lg border flex p-4 gap-4 items-center">
               <div>
                 <img className="w-[72px]" src="https://cdn.tourradar.com/s3/op/206x150/Cosmos-0f3d.png" alt="" />
               </div>
