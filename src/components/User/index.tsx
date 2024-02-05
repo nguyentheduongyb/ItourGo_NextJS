@@ -1,7 +1,7 @@
 import { signOut, useSession } from 'next-auth/react'
 import React, { useState } from 'react'
 import Popper from './Popper'
-import Menu from '~/components/popper/Menu'
+// import Menu from '~/components/popper/Menu'
 import { FaRegUserCircle, FaUserCircle } from 'react-icons/fa'
 import { BsCoin, BsGear } from 'react-icons/bs'
 import { CiLogout } from 'react-icons/ci'
