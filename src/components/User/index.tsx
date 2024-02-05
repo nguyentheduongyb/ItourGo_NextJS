@@ -5,6 +5,7 @@ import Menu from '~/components/popper/Menu'
 import { FaRegUserCircle, FaUserCircle } from 'react-icons/fa'
 import { BsCoin, BsGear } from 'react-icons/bs'
 import { CiLogout } from 'react-icons/ci'
+import Link from 'next/link'
 
 const Auth = () => {
         const { data } = useSession()
@@ -40,10 +41,10 @@ const Auth = () => {
                                                 <CgShoppingCart className="text-[color:var(--secondary-color)]" fontSize={30} />
                                         </button>
                                 </Cart> */}
-                                <Menu items={userMenu}>
-                                        <div className="mx-4 cursor-pointer w-[30px] h-[30px] bg-no-repeat bg-center bg-cover rounded-full" style={{ backgroundImage: `url("${data?.user?.image}")` }}>
-                                        </div>
-                                </Menu>
+                                {/* <Menu items={userMenu}> */}
+                                <Link href="/account?tab=order" className="mx-4 cursor-pointer w-[30px] h-[30px] bg-no-repeat bg-center bg-cover rounded-full" style={{ backgroundImage: `url("${data?.user?.image}")` }}>
+                                </Link>
+                                {/* </Menu> */}
 
                         </>
                 ) : (

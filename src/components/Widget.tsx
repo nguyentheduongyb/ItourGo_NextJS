@@ -27,7 +27,7 @@ const Widget = ({ id }: any) => {
                         }), // body data type must match "Content-Type" header
                 })
                         .then(response => {
-                                alert('Error')
+                                router.push('/account?tab=order')
                         })
 
                         .catch(error => {
