@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Tippy from '@tippyjs/react/headless';
 
 import { Wrapper as PopperWrapper } from '~/components/popper';
-import MenuItem from './MenuItem.tsx';
+import MenuItem from './MenuItem';
 import Header from './Header';
 import { useState } from 'react';
 const defaultFn = () => { };

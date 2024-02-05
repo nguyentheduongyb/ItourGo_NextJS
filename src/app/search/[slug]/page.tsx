@@ -2,16 +2,15 @@
 import React from 'react'
 import Link from 'next/link'
 import { Breadcrumb } from 'flowbite-react';
-
 import SearchResult from '~/components/Search/searchResults/SearchList'
-import NavSearch from '../NavSearch'
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import Filter from '~/components/filter/Filter';
 const SearchPage = () => {
         return (
                 <div className="container mt-2">
                         <Breadcrumb aria-label="Solid background breadcrumb example" className="my-3 px-1 py-3 dark:bg-gray-800 line-clamp-1">
-                                <Breadcrumb.Item href="#">
-                                        Trang chủ
+                                <Breadcrumb.Item>
+                                        <Link href="/"> Trang chủ</Link>
                                 </Breadcrumb.Item>
                                 <Breadcrumb.Item>Tour Hà Nội Số 1</Breadcrumb.Item>
                         </Breadcrumb>
@@ -23,7 +22,7 @@ const SearchPage = () => {
                                 {/* Content left*/}
 
                                 <div className="md:w-1/4 flex flex-col gap-4">
-                                        <NavSearch />
+                                        <Filter />
                                 </div>
                                 {/* Content right */}
                                 <div className="flex-1">

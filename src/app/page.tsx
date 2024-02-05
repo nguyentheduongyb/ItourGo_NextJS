@@ -1,122 +1,31 @@
-'use client'
 import Link from 'next/link';
-import { useState } from 'react';
 import { BsFillSunFill } from 'react-icons/bs';
 import { FaStar } from "react-icons/fa"
+import Deal from '~/components/home/Deal';
+import TourOutstanding from '~/components/home/TourOutstanding';
 
+import { urlAPI } from '~/utils/API';
 
-const Home = () => {
-  const [data, setData] = useState<any[]>([1, 2, 3, 4, 5])
+// async function getData() {
+//   const res = await fetch(`${urlAPI}/api/deal`)
+
+//   if (!res.ok) {
+//     throw new Error('Failed to fetch data')
+//   }
+//   return res.json()
+// }
+
+const home = async () => {
+
+  const array = [1, 2, 3, 4]
   return (
     <div>
+      <Deal />
+      <TourOutstanding />
       <section className='my-8'>
-        <div className='container'>
-          <div className='relative w-full pt-[80%] md:pt-[26.5%] rounded-2xl bg-center bg-no-repeat bg-cover flex justify-center' style={{ backgroundImage: 'url("https://preview.colorlib.com/theme/direngine/images/bg_1.jpg.webp")' }}>
-            <div className='absolute w-full h-full left-0 top-0 p-12 md:p-20 space-y-6 text-white'>
-              <h5 className='text-3xl font-bold capitalize line-clamp-1'>Ưu đãi kì du lịch của bạn ở đây</h5>
-              <p className='line-clamp-2'>Mùa ưu đãi vẫn chưa kết thúc. Nhận ngay ưu đãi đến 50%</p>
-              <button className='text-black font-medium rounded-full px-6 py-2 bg-white'>Tìm hiểu ngay</button>
-            </div>
-          </div>
-          <div className='mt-[-80px] relative w-full'>
-            <div className='w-full bottom-[-40%]'>
-              <div className='mx-auto rounded-2xl w-[94%]'>
-                <div className='flex gap-4 w-full overflow-auto scrollbar-hide pb-4 md:px-8'>
-                  <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
-                    <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="relative rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/V2aYSJ.jpg" alt="" />
-                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
-                      </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Europe Deals</h5>
-                    </div>
-                  </Link>
-                  <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
-                    <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="relative rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/Rz5Mdv.png" alt="" />
-                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
-                      </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Europe Deals</h5>
-                    </div>
-                  </Link>
-                  <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
-                    <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="relative rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/C3MOCS.png" alt="" />
-                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
-                      </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Italia Deals</h5>
-                    </div>
-                  </Link>
-                  <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
-                    <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="relative rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/ypgiOX.png" alt="" />
-                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
-                      </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Japan Deals</h5>
-                    </div>
-                  </Link>
-                  <Link href="/search/aaaa" className="min-w-[150px] md:min-w-[200px] hover:text-[color:var(--primary-color)]">
-                    <div className="rounded-2xl border-white bg-white border-[10px] w-full hover:drop-shadow-[0_0_10px_rgba(0,0,0,0.25)]">
-                      <div className="relative rounded-2xl overflow-hidden">
-                        <img className="w-full" src="https://cdn.tourradar.com/s3/content-pages/391/438x292/hbdQyn.png" alt="" />
-                        <button className='absolute top-2 left-2 font-medium uppercase text-xs py-1 px-3 rounded-full bg-[#EF5131] text-white'>up to 50% off</button>
-                      </div>
-                      <h5 className="px-4 pb-2 pt-3 font-semibold">Peru Deals</h5>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className='my-8'>
-        <p className="text-2xl font-medium uppercase mb-6 text-center">Các tour nổi bật trong tháng</p>
-        <div className='px-4 grid grid-cols-1 md:grid-cols-3 gap-4'>
-          <Link className='relative w-full rounded overflow-hidden' href="">
-            <img src="https://cdn.tourradar.com/s3/tour/360x210/216153_633ffb37421ae.jpg" className='w-full' alt="" />
-            <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
-              <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
-              <div className='z-10 space-y-3'>
-                <h6 className='uppercase text-white font-medium text-xl'>Miền tây trong ngày</h6>
-                <p className='text-white'>Giá: 450.000 VNĐ</p>
-                <button className='py-1 px-3 rounded-full border bg-transparent hover:bg-[var(--primary-color)] hover:text-white font-medium text-[#ccc]'>Đặt ngay</button>
-              </div>
-            </div>
-          </Link>
-          <Link className='relative w-full rounded overflow-hidden' href="">
-            <img src="https://cdn.tourradar.com/s3/tour/360x210/246976_64928ab093294.jpg" className='w-full' alt="" />
-            <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
-              <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
-              <div className='z-10 space-y-3'>
-                <h6 className='uppercase text-white font-medium text-xl'>Miền tây trong ngày</h6>
-                <p className='text-white'>Giá: 450.000 VNĐ</p>
-                <button className='py-1 px-3 rounded-full border bg-transparent hover:bg-[var(--primary-color)] hover:text-white font-medium text-[#ccc]'>Đặt ngay</button>
-              </div>
-            </div>
-          </Link>
-          <Link className='relative w-full rounded overflow-hidden' href="">
-            <img src="https://cdn.tourradar.com/s3/tour/360x210/152897_5e5f03dc274b1.jpg" className='w-full' alt="" />
-            <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
-              <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
-              <div className='z-10 space-y-3'>
-                <h6 className='uppercase text-white font-medium text-xl'>Miền tây trong ngày</h6>
-                <p className='text-white'>Giá: 450.000 VNĐ</p>
-                <button className='py-1 px-3 rounded-full border bg-transparent hover:bg-[var(--primary-color)] hover:text-white font-medium text-[#ccc]'>Đặt ngay</button>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-      <section className='my-8'>
-        <p className="text-2xl font-medium uppercase mb-6 text-center">Các tour chính của chúng tôi</p>
+        <p className="text-2xl font-medium uppercase mb-6 text-center">Các tour được yêu thích nhất của chúng tôi</p>
         <div className='container grid grid-cols-2 md:grid-cols-4 gap-4'>
-          {data.map((item, index) => (
+          {array.map((item, index) => (
             <Link key={index} className='relative w-full rounded overflow-hidden pt-[100%] first:row-span-2 first:col-span-2 bg-no-repeat bg-center bg-cover' href="" style={{ backgroundImage: 'url("https://tourbonphuong.com/upload/hinhanh/564341937216996_750x500.jpg")' }}>
               <div className='absolute w-full h-full left-0 top-0 flex items-center justify-center text-center'>
                 <div className='absolute w-full h-full bg-[rgba(0,0,0,0.15)]'></div>
@@ -884,4 +793,4 @@ const Home = () => {
     </div >
   );
 }
-export default Home;
+export default home;

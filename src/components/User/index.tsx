@@ -13,7 +13,7 @@ const Auth = () => {
                 {
                         icon: <FaUserCircle />,
                         title: 'View profile',
-                        to: '/@ntd7302',
+                        to: '/account?tab=profile',
                 },
                 {
                         icon: <BsCoin />,

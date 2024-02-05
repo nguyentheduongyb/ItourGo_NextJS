@@ -14,12 +14,13 @@
   --font-family: 'Poppins', sans-serif;
   --text-primary: rgb(19, 142, 173);
   --header-primary-bg: 
-    linear-gradient(45deg, #6f86d6, #89f7fe)
+    linear-gradient(45deg, #6f86d6, #89f7fe);
 }
 body {
     font-family: var(--font-family);
     text-rendering: optimizespeed;
     color: var(--text-color);
+    color: #323637;
     overflow-y: overlay;
 }
 .bg-header{

@@ -5,12 +5,13 @@ import React from 'react'
 import { BsStar } from 'react-icons/bs'
 import { HiLightBulb, HiOutlineInformationCircle, HiOutlineLightBulb } from 'react-icons/hi'
 import { IoMdClose } from 'react-icons/io'
+import MethodPayment from '~/components/MethodPayment/MethodPayment'
 
 const BookNow = () => {
         return (
                 <div className="bg-[#F6F7F9] pb-8">
                         <div className="container py-6 flex justify-between">
-                                <h1>Escorted India Tour</h1>
+                                <h1 className='text-3xl font-medium'>Escorted India Tour</h1>
                                 <div className="flex gap-4">
                                         <button className='bg-white shadow rounded-full py-2 px-6 text-sm font-medium text-[var(--primary-color)]'>Hỗ Trợ</button>
                                         <button className='bg-white shadow rounded-full py-2 px-6 text-sm font-medium text-[var(--primary-color)]'>Chia Sẻ</button>
@@ -79,7 +80,7 @@ const BookNow = () => {
                                                                 <button className='py-2 px-4 bg-[var(--primary-color)] text-white font-bold rounded-full'>Áp dụng</button>
                                                         </div>
                                                 </div>
-                                                <div className='mt-4'>
+                                                <div className='mt-8'>
                                                         <div className='border-y py-4 flex gap-4'>
                                                                 <div className='w-1/2 space-y-4'>
                                                                         <p className='space-x-4'>
@@ -150,7 +151,7 @@ const BookNow = () => {
                                                         <p className='w-8 h-8 flex items-center justify-center rounded-lg bg-black text-white'>3</p>
                                                         <p className='font-medium text-xl'>Thông tin chi tiết khách du lịch</p>
                                                 </div>
-                                                <div className='bg-[#EFF1FD] flex mt-6 p-3 rounded space-x-2'>
+                                                <div className='bg-[#EFF1FD] flex mt-6 p-3 rounded space-x-2 text-sm'>
                                                         <span className='font-bold'>Xin lưu ý:</span>
                                                         <span>Thông tin chi tiết của khách du lịch phải khớp với thông tin trên hộ chiếu</span>
                                                 </div>
@@ -160,7 +161,7 @@ const BookNow = () => {
                                                                         <span className='font-bold'>Khách du lịch chính</span>
                                                                         <span>Khách du lịch này sẽ đóng vai trò là người liên hệ để đặt chỗ.</span>
                                                                 </p>
-                                                                <div className='w-3/5 space-y-4'>
+                                                                <form className='w-3/5 space-y-4'>
                                                                         <div>
                                                                                 <Label htmlFor="first-name" value="Họ" />
                                                                                 <TextInput id="first-name" type="text" required shadow />
@@ -225,7 +226,7 @@ const BookNow = () => {
                                                                                         <option>Germany</option>
                                                                                 </Select>
                                                                         </div>
-                                                                </div>
+                                                                </form>
                                                         </div>
                                                 </div>
                                         </div>
@@ -239,17 +240,36 @@ const BookNow = () => {
                                                         <button className='py-1 px-4 rounded-full bg-[#CDE9FC] text-[#177FA4] font-bold'>Xem Câu Hỏi & Trả Lời</button>
                                                 </div>
                                         </div>
-                                        <div className='bg-white p-6 shadow rounded-lg space-y-4'>
-                                                <div className="flex items-center gap-2">
-                                                        <Checkbox id="accept" defaultChecked />
-                                                        <Label htmlFor="accept" className="flex">
-                                                                Tôi đồng ý với&nbsp;
-                                                                <a href="#" className="text-cyan-600 hover:underline dark:text-cyan-500">
-                                                                        Điều kiện và Điều khoản của ItourGo
-                                                                </a>
-                                                        </Label>
+
+
+                                        <div className='bg-white p-6 shadow rounded-lg'>
+                                                <div className='flex items-center gap-2'>
+                                                        <p className='w-8 h-8 flex items-center justify-center rounded-lg bg-black text-white'>4</p>
+                                                        <p className='font-medium text-xl'>Thêm phương thức thanh toán</p>
                                                 </div>
-                                                <Button className='w-full rounded-full py-1' type="submit"><span className="text-lg">Đặt 2 chỗ</span></Button>
+
+                                                <div className="space-y-4 mt-8">
+                                                        <div className='bg-[#EFF1FD] flex mt-6 p-3 rounded space-x-2 text-sm'>
+                                                                <span>Đây là khoản thanh toán an toàn và được mã hóa SSL. Các thông tin thẻ tín dụng của bạn là an toàn.</span>
+                                                        </div>
+                                                        <div>
+                                                                <p>Chọn phương thức thanh toán của bạn:</p>
+                                                                <MethodPayment />
+                                                        </div>
+                                                </div>
+
+                                                <div className="mt-16 space-y-4">
+                                                        <div className="flex items-center gap-2">
+                                                                <Checkbox id="accept" defaultChecked />
+                                                                <Label htmlFor="accept" className="flex">
+                                                                        Tôi đồng ý với&nbsp;
+                                                                        <a href="#" className="text-cyan-600 hover:underline dark:text-cyan-500">
+                                                                                Điều kiện và Điều khoản của ItourGo
+                                                                        </a>
+                                                                </Label>
+                                                        </div>
+                                                        <Button className='w-full rounded-full py-1' type="submit"><span className="text-lg">Đặt 2 chỗ</span></Button>
+                                                </div>
                                         </div>
                                 </div>
                                 <div className="w-1/3 space-y-8">
@@ -285,12 +305,33 @@ const BookNow = () => {
                                                 </div>
                                         </div>
                                         <div className='bg-white p-6 shadow rounded-lg'>
-                                                <div>
-                                                        <p className='font-medium text-xl'>Giảm giá</p>
-                                                </div>
-                                                <div className='p-6 bg-[#EFF1FD] flex gap-4 mt-4 rounded-lg'>
+                                                <p className='font-medium text-xl'>Phát giá</p>
+                                                {/* <div className='p-6 bg-[#EFF1FD] flex gap-4 mt-4 rounded-lg'>
                                                         <HiOutlineInformationCircle color="#2876F3" size="28" />
                                                         <p className='flex-1'>Chọn số lượng khách du lịch và chỉ định chỗ ở để hiển thị giá.</p>
+                                                </div> */}
+                                                <div className='mt-8 space-y-6'>
+                                                        <div className='flex justify-between gap-4 border-b-4 pb-4'>
+                                                                <div className='w-2/3 flex flex-col gap-2'>
+                                                                        <span>Double or Twin Room</span>
+                                                                        <span className='text-[var(--secondary-color)] text-sm'>1 Traveller x $3,169.95</span>
+                                                                </div>
+                                                                <span>$3,169.95</span>
+                                                        </div>
+                                                        <div className='w-full flex justify-between items-center'>
+                                                                <span className='font-bold flex-1'>Tổng số tiền phải trả</span>
+                                                                <span className='font-bold text-xl'>US$3,169.95</span>
+                                                        </div>
+                                                        <div className='p-3 bg-[#F1F2F3] rounded-lg'>
+                                                                <div className='w-full flex justify-between items-center'>
+                                                                        <span className='font-bold flex-1'>Hạn chót hôm nay</span>
+                                                                        <span className='font-bold'>US$3,169.95</span>
+                                                                </div>
+                                                                <div className='w-full flex justify-between items-center'>
+                                                                        <span className='flex-1'>Hạn chót on 9 Mar, 2024</span>
+                                                                        <span className=''>$2,377.46</span>
+                                                                </div>
+                                                        </div>
                                                 </div>
                                         </div>
 

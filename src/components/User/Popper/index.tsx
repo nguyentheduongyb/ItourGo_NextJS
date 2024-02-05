@@ -1,7 +1,7 @@
 import { Modal } from 'flowbite-react'
 import React, { useState } from 'react'
-import Login from './Login'
-import Register from './Register'
+import Login from '../Login'
+import Register from '../Register'
 import { IoIosArrowBack } from 'react-icons/io'
 
 const Popper = ({ show, setShow }: any) => {

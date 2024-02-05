@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import AuthMain from './AuthMain'
-import Link from 'next/link'
-import { IoIosArrowBack } from 'react-icons/io'
-import AuthWithCredential from './AuthWithCredential'
+import AuthMain from '../AuthMain'
+import AuthWithCredential from '../AuthWithCredential'
 
 const Login = ({ tab, setTab }: any) => {
         return (

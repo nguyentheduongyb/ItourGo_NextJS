@@ -1,7 +1,5 @@
-import { Button, Checkbox, Label, TextInput } from 'flowbite-react'
-import Link from 'next/link'
+import { Button, Label, TextInput } from 'flowbite-react'
 import React from 'react'
-import { IoIosArrowBack } from 'react-icons/io'
 
 const Register = ({ setTab }: any) => {
         return (

@@ -3,14 +3,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Contact from "./Contact";
 import { Navbar } from 'flowbite-react';
-import User from "~/app/auth/User"
+import User from "~/components/User";
 import { MdLanguage } from "react-icons/md"
 import { FaSearch } from "react-icons/fa"
 
 import { usePathname } from 'next/navigation'
 import SearchMain from '~/components/Search';
 const Header = () => {
-        const [show, setShow] = useState(false)
         const pathname = usePathname()
         const arr = [
                 {
