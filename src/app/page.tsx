@@ -4,24 +4,15 @@ import { FaStar } from "react-icons/fa"
 import Deal from '~/components/home/Deal';
 import TourOutstanding from '~/components/home/TourOutstanding';
 
-import { urlAPI } from '~/utils/API';
 
-// async function getData() {
-//   const res = await fetch(`${urlAPI}/api/deal`)
-
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch data')
-//   }
-//   return res.json()
-// }
 
 const home = async () => {
 
   const array = [1, 2, 3, 4]
   return (
     <div>
-      <Deal />
-      <TourOutstanding />
+      {/* <Deal /> */}
+      {/* <TourOutstanding /> */}
       <section className='my-8'>
         <p className="text-2xl font-medium uppercase mb-6 text-center">Các tour được yêu thích nhất của chúng tôi</p>
         <div className='container grid grid-cols-2 md:grid-cols-4 gap-4'>
