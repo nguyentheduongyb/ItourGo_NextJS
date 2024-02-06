@@ -4,7 +4,7 @@ import '~/styles/globals.css'
 
 
 import type { Metadata } from 'next'
-import { NextAuthProvider } from './Provider'
+import { AuthProvider } from './AuthProvider'
 
 export const metadata: Metadata = {
   title: 'ItourGo',
@@ -19,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <NextAuthProvider>
+        <AuthProvider>
           <Header />
           {children}
           <Footer />
-        </NextAuthProvider>
+        </AuthProvider>
       </body>
     </html>
   )

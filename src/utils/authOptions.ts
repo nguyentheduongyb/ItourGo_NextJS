@@ -2,6 +2,8 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import FacebookProvider from "next-auth/providers/facebook";
+import { urlAPI } from "./API";
+import { log } from "console";
 
 export const authOptions: NextAuthOptions = {
         providers: [
@@ -14,34 +16,35 @@ export const authOptions: NextAuthOptions = {
                         clientSecret: process.env.FACEBOOK_CLIENT_SECRET ?? ""
                 })
         ],
-        // callbacks: {
-        //         async signIn({ user, account }: any) {
-        //                 if (account.provider === "google") {
-        //                         const { name, email } = user
-        //                         try {
-        //                                 const res = await fetch('https://backend-itourgo.onrender.com/users/signup',
-        //                                         {
-        //                                                 method: "POST",
-        //                                                 headers: {
-        //                                                         "Content-Type": "application/json",
-        //                                                 },
-        //                                                 body: JSON.stringify({
-        //                                                         name,
-        //                                                         email,
-        //                                                 }),
-        //                                         })
 
-        //                                 if (res.ok) {
-        //                                         return user
-        //                                 }
-        //                         } catch (error) {
-        //                                 console.log(error);
-        //                         }
-        //                 }
-        //                 return user
-        //         },
+        callbacks: {
+                async signIn({ user, account }: any) {
+                        if (account.provider === "google") {
+                                const { email } = user
+                                try {
+                                        const res = await fetch(`${urlAPI}/users`,
+                                                {
+                                                        method: "POST",
+                                                        headers: {
+                                                                "Content-Type": "application/json",
+                                                        },
+                                                        body: JSON.stringify({
+                                                                email,
+                                                        }),
+                                                })
 
-        // },
+                                        if (res.ok) {
+                                                log(user)
+                                                return user
+                                        }
+                                } catch (error) {
+                                        console.log(error);
+                                }
+                        }
+                        return user
+                },
+
+        },
         session: {
                 strategy: "jwt",
         },
