@@ -1,7 +1,6 @@
 import { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { urlAPI } from "./API";
-import { log } from "console";
 
 export const authOptions: NextAuthOptions = {
         providers: [
@@ -10,7 +9,6 @@ export const authOptions: NextAuthOptions = {
                         clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ""
                 }),
         ],
-
         callbacks: {
                 async signIn({ user, account }: any) {
                         if (account.provider === "google") {
@@ -28,14 +26,13 @@ export const authOptions: NextAuthOptions = {
                                                 })
 
                                         if (res.ok) {
-                                                log(user)
                                                 return user
                                         }
                                 } catch (error) {
                                         console.log(error);
                                 }
+                                return user
                         }
-                        return user
                 },
 
         },

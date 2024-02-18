@@ -4,34 +4,33 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link';
 import { HiOutlineInformationCircle } from 'react-icons/hi';
 import { urlAPI } from '~/utils/API';
-import { log } from 'console';
+import { useSession } from 'next-auth/react';
 
 const Widget = ({ id }: any) => {
-        console.log(id)
+        const { data }: any = useSession()
         const router = useRouter()
         const handlerBooking = () => {
                 fetch(`${urlAPI}/api/booking`, {
-                        method: "POST", // *GET, POST, PUT, DELETE, etc.
-                        mode: "cors", // no-cors, *cors, same-origin
-                        cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-                        credentials: "same-origin", // include, *same-origin, omit
+                        method: "POST",
                         headers: {
                                 "Content-Type": "application/json",
-                                // 'Content-Type': 'application/x-www-form-urlencoded',
                         },
-                        redirect: "follow", // manual, *follow, error
-                        referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
                         body: JSON.stringify({
-                                user: "65c0fdccdd2b3a59701fa5c2",
+                                user: data.user.email,
                                 tour: id
-                        }), // body data type must match "Content-Type" header
+                        }),
                 })
                         .then(response => {
-                                router.push('/account?tab=order')
+                                if (response.ok) {
+                                        router.push('/account?tab=order')
+                                }
+                                else {
+                                        alert("fail")
+                                }
                         })
-
                         .catch(error => {
-                                //handle error
+                                console.log(error);
+
                         });
         }
         return (

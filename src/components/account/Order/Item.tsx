@@ -3,14 +3,16 @@ import Link from 'next/link'
 import React from 'react'
 import { BsQuestionCircle, BsShop } from 'react-icons/bs'
 
-const Item = () => {
+const Item = ({ item }: any) => {
+        console.log(item);
+
         return (
                 <div className="border-t-2">
                         <div className="p-5 bg-white text-black border-b">
                                 <div className="flex justify-between border-b pb-3">
                                         <div className="flex items-center gap-4">
                                                 <Badge color="success">Đã thanh toán</Badge>
-                                                <div className="flex gap-2"><Link href="/agency/png-agency" className="border text-xs rounded px-2 py-1 flex items-center gap-2"><BsShop />PNG Agency</Link></div>
+                                                <div className="flex gap-2"><Link href={`/tour`} className="border text-xs rounded px-2 py-1 flex items-center gap-2"><BsShop />PNG Agency</Link></div>
                                         </div>
                                         <div className="flex gap-2 items-center text-sm"><span>Chuyến đi của bạn sẽ được bắt đầu vào <i className='font-medium'>8:00 ngày 1/1/2024</i></span><BsQuestionCircle /><span>|</span><Badge color="warning">Sắp khởi hành</Badge></div>
                                 </div>

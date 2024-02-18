@@ -1,7 +1,6 @@
-import Link from "next/link"
-import { Fragment, useState } from "react"
+import { useState } from "react"
 
-import { BsQuestionCircle, BsSearch, BsShop } from "react-icons/bs"
+import { BsSearch } from "react-icons/bs"
 import Item from "./Item"
 
 const Ordered = () => {

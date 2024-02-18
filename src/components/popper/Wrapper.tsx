@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 
 
-function Wrapper({ children, className }: any) {
-    return <div className={` ${className}`}>{children}</div>;
+function Wrapper({
+    children
+}: {
+    children: React.ReactNode
+}) {
+    return <div>{children}</div>;
 }
 
 Wrapper.propTypes = {

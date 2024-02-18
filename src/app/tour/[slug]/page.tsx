@@ -7,12 +7,12 @@ import TourRecommend from '~/components/tour/TourRecommend';
 import Navigation from '~/components/Navigation';
 import { urlAPI } from '~/utils/API';
 import Schedule from '~/components/tour/Schedule'
-import { HiOutlineInformationCircle } from 'react-icons/hi';
 import Widget from '~/components/Widget';
 
 export default async function Page({ params }: any) {
         const response = await fetch(`${urlAPI}/api/tour/detail/${params.slug}`);
         const data = await response.json();
+        console.log(data);
 
 
         return (
