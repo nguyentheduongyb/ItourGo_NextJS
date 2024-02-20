@@ -41,10 +41,10 @@ const Auth = () => {
                                                 <CgShoppingCart className="text-[color:var(--secondary-color)]" fontSize={30} />
                                         </button>
                                 </Cart> */}
-                                <Menu items={userMenu}>
-                                        <div className="mx-4 cursor-pointer w-[30px] h-[30px] bg-no-repeat bg-center bg-cover rounded-full" style={{ backgroundImage: `url("${data?.user?.image}")` }}>
-                                        </div>
-                                </Menu>
+                                {/* <Menu items={userMenu}> */}
+                                <div className="mx-4 cursor-pointer w-[30px] h-[30px] bg-no-repeat bg-center bg-cover rounded-full" style={{ backgroundImage: `url("${data?.user?.image}")` }}>
+                                </div>
+                                {/* </Menu> */}
 
                         </>
                 ) : (

@@ -4,7 +4,6 @@ import React from 'react'
 import { BsQuestionCircle, BsShop } from 'react-icons/bs'
 
 const Item = ({ item }: any) => {
-        console.log(item);
 
         return (
                 <div className="border-t-2">
@@ -20,16 +19,16 @@ const Item = ({ item }: any) => {
                                         <div className="border w-[100px] h-[100px] bg-no-repeat bg-center bg-cover" style={{ backgroundImage: "url('https://cdn.tourradar.com/s3/content-pages/391/120x120/TzJbhr.jpg')" }} />
                                         <div className="w-full flex flex-1 gap-4 items-center justify-between">
                                                 <div className='flex flex-col h-full justify-between w-[60%]'>
-                                                        <span className="font-bold">South Korea One Life Adventures - 10 Day Tour</span>
-                                                        <p className="text-sm">Điểm đến: <span className='font-medium'>Seoul, Geumsan</span></p>
-                                                        <p className="text-sm">Loại Tour: <span className='font-medium'>Daily</span></p>
-                                                        <p className="text-sm">Thời gian: <span className='font-medium'>3 ngày 2 đêm</span></p>
+                                                        <span className="font-bold">{item.tour.name}</span>
+                                                        <p className="text-sm line-clamp-2">Điểm đến: <span className='font-medium'>{item.tour.destinations}</span></p>
+                                                        <p className="text-sm line-clamp-2">Loại Tour: <span className='font-medium'>Daily</span></p>
+                                                        <p className="text-sm line-clamp-2">Thời gian: <span className='font-medium'>{item.tour.duration}</span></p>
                                                 </div>
                                                 <div className='flex-1'>
                                                         <div className='flex w-full justify-between'>
                                                                 <div className='flex flex-col text-center space-y-2'>
                                                                         <span className='font-bold'>Số lượng khách</span>
-                                                                        <span className='text-2xl font-bold'>10</span>
+                                                                        <span className='text-2xl font-bold'>{item.adult + item.child}</span>
                                                                 </div>
                                                                 <i className='w-[1px] h-46 bg-[#F1F2F3]'></i>
                                                                 <div className='flex flex-col text-center space-y-2'>
@@ -46,7 +45,7 @@ const Item = ({ item }: any) => {
                         </div>
                         <div className="p-5 bg-white text-black">
                                 <div className="flex justify-end pb-3">
-                                        <div className="flex gap-2 items-center"><h2>Thành tiền:</h2><span className="text-sm text-[var(--text-primary)]">đ</span><span className="text-[var(--text-primary)] font-bold text-xl">22.000.000</span></div>
+                                        <div className="flex gap-2 items-center"><h2>Thành tiền:</h2><span className="text-sm text-[var(--text-primary)]">đ</span><span className="text-[var(--text-primary)] font-bold text-xl">{item.tour.totalPrice}</span></div>
                                 </div>
                                 <div className="flex justify-between items-center">
                                         <div>

@@ -7,7 +7,7 @@ import TourRecommend from '~/components/tour/TourRecommend';
 import Navigation from '~/components/Navigation';
 import { urlAPI } from '~/utils/API';
 import Schedule from '~/components/tour/Schedule'
-import Widget from '~/components/Widget';
+import Widget from '~/components/widget/Widget';
 
 export default async function Page({ params }: any) {
         const response = await fetch(`${urlAPI}/api/tour/detail/${params.slug}`);
@@ -153,7 +153,7 @@ export default async function Page({ params }: any) {
 
                                         </div>
                                         <div className="flex-1">
-                                                <Widget id={data._id} />
+                                                <Widget id={data._id} price={data.price} />
                                         </div>
                                 </div>
 

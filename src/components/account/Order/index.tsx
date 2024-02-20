@@ -12,7 +12,6 @@ const Ordered = () => {
                 fetch(`${urlAPI}/api/booking/${data && data.user.email}`)
                         .then(response => response.json())
                         .then(data => {
-                                console.log(data);
                                 setResults(data)
                         })
                         .catch(error => {
